@@ -16,6 +16,11 @@
     binaryen
     tldr
     hyperfine
+    imagemagick
+    qemu
+    llvm
+    pango
+    go
   ];
 
   programs.git = {
