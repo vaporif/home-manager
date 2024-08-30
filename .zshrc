@@ -11,12 +11,8 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export MODULAR_HOME="$HOME/.modular"
-export PATH="$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -116,9 +112,6 @@ source <(kubectl completion zsh)
 
 [ -s "/Users/vaporif/.svm/svm.sh" ] && source "/Users/vaporif/.svm/svm.sh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/usr/local/sbin:$PATH"
 
 export GPG_TTY=$(tty)
@@ -168,14 +161,6 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pnpm
-export PNPM_HOME="/Users/vaporif/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 ulimit -Sn 4096      # Increase open files.
 ulimit -Sl unlimited # Increase max locked memory.
 
@@ -217,8 +202,6 @@ _fzf_comprun() {
 eval "$(zoxide init zsh)"
 
 alias cd="z"
-
-eval "$(goenv init -)"
 
 source "$HOME/.gm/bin/shell-support"
 
