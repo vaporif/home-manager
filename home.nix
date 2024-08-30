@@ -21,6 +21,8 @@
     llvm
     pango
     go
+    nodejs_20
+    python3
   ];
 
   programs.git = {
