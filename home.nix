@@ -33,17 +33,12 @@
         lg = "lazygit";
       };
       syntaxHighlighting.enable = true;
-      # oh-my-zsh = {
-      #   enable = true;
-      #   plugins = [ "git" "thefuck" ];
-      #   theme = "robbyrussell";
-      # };
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "git" "rust" ];
+        theme = "robbyrussell";
+      };
       initExtra = "${builtins.readFile ./.zshrc}";
-    };
-
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
     };
 
     fzf = {
@@ -51,9 +46,9 @@
       enableZshIntegration = true;
     };
 
-    # nnn = {
-    #   enable = true;
-    # };
+    nnn = {
+      enable = true;
+    };
 
     neovim = {
       viAlias = true;
