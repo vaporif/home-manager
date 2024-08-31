@@ -25,18 +25,25 @@
     delta
     direnv
     pnpm
+    bottom
   ];
 
   programs = {
+    ripgrep.enable = true;
+    fd.enable = true;
+    gh.enable = true;
+    bat.enable = true;
+    lazygit.enable = true;
+
     zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
       shellAliases = {
         lg = "lazygit";
         ls = "eza -a";
       };
-      syntaxHighlighting.enable = true;
       oh-my-zsh = {
         enable = true;
         plugins = [ "git" "rust" ];
@@ -66,29 +73,9 @@
       enable = true;
     };
 
-    fd = {
-      enable = true;
-    };
-
     eza = {
       enable = true;
       enableZshIntegration = true;
-    };
-
-    ripgrep = {
-      enable = true;
-    };
-
-    gh = {
-      enable = true;
-    };
-
-    bat = {
-      enable = true;
-    };
-
-    lazygit = {
-      enable = true;
     };
 
     zoxide = {
