@@ -31,6 +31,7 @@
       autosuggestion.enable = true;
       shellAliases = {
         lg = "lazygit";
+        ls = "eza -a";
       };
       syntaxHighlighting.enable = true;
       oh-my-zsh = {
@@ -92,4 +93,5 @@
   };
 
   xdg.configFile.nvim.source = ./nvim;
+  xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./config.kdl}";
 }
