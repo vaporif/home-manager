@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ... }: {
   home.username = "vaporif";
   home.homeDirectory = "/Users/vaporif";
   home.stateVersion = "22.11";
@@ -8,13 +8,11 @@
   home.packages = with pkgs; [
     cargo-binstall
     jq
-    redis
     go-ethereum
     nixd
     wget
     cmake
     protobuf
-    binaryen
     tldr
     hyperfine
     imagemagick
@@ -23,51 +21,80 @@
     pango
     go
     nodejs_20
-    python3
+    rustup
   ];
 
-  programs.git = {
-    enable = true;
-  };
+  programs = {
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      shellAliases = {
+        lg = "lazygit";
+      };
+      syntaxHighlighting.enable = true;
+      # oh-my-zsh = {
+      #   enable = true;
+      #   plugins = [ "git" "thefuck" ];
+      #   theme = "robbyrussell";
+      # };
+      initExtra = "${builtins.readFile ./.zshrc}";
+    };
 
-  programs.fzf = {
-    enable = true;
-  };
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.nnn = {
-    enable = true;
-  };
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
-  programs.neovim = {
-    enable = true;
+    # nnn = {
+    #   enable = true;
+    # };
+
+    neovim = {
+      viAlias = true;
+      enable = true;
+    };
+
+    fd = {
+      enable = true;
+    };
+
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    ripgrep = {
+      enable = true;
+    };
+
+    gh = {
+      enable = true;
+    };
+
+    bat = {
+      enable = true;
+    };
+
+    lazygit = {
+      enable = true;
+    };
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    zellij = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 
   xdg.configFile.nvim.source = ./nvim;
-  programs.fd = {
-    enable = true;
-  };
-
-  programs.eza = {
-    enable = true;
-  };
-
-  programs.ripgrep = {
-    enable = true;
-  };
-
-  programs.gh = {
-    enable = true;
-  };
-
-  programs.bat = {
-    enable = true;
-  };
-
-  programs.lazygit = {
-    enable = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-  };
 }
