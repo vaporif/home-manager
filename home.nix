@@ -23,6 +23,8 @@
     buf
     nerdfonts
     delta
+    direnv
+    pnpm
   ];
 
   programs = {
