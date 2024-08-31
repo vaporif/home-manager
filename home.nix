@@ -7,15 +7,12 @@
 
   home.packages = with pkgs; [
     cargo-binstall
-    jq
     go-ethereum
     nixd
     wget
-    cmake
     protobuf
     tldr
     hyperfine
-    imagemagick
     qemu
     llvm
     pango
@@ -49,6 +46,10 @@
 
     nnn = {
       enable = true;
+      bookmarks = {
+        e = "~/Repos/eiger/";
+        m = "~/.config/home-manager/";
+      };
     };
 
     neovim = {
