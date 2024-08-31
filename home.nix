@@ -1,4 +1,4 @@
-{pkgs, fzf-git-sh-package, ... }: {
+{pkgs, ethereum-nix-pkgs, fzf-git-sh-package, ... }: {
   home.username = "vaporif";
   home.homeDirectory = "/Users/vaporif";
   home.stateVersion = "24.11";
@@ -26,6 +26,7 @@
     direnv
     pnpm
     bottom
+    ethereum-nix-pkgs.reth
   ];
 
   programs = {
@@ -43,6 +44,7 @@
       shellAliases = {
         lg = "lazygit";
         ls = "eza -a";
+        cat = "bat";
       };
       oh-my-zsh = {
         enable = true;
