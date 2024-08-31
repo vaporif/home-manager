@@ -1,4 +1,4 @@
-{pkgs, ... }: {
+{pkgs, fzf-git-sh-package, ... }: {
   home.username = "vaporif";
   home.homeDirectory = "/Users/vaporif";
   home.stateVersion = "22.11";
@@ -36,7 +36,10 @@
         plugins = [ "git" "rust" ];
         theme = "robbyrussell";
       };
-      initExtra = "${builtins.readFile ./.zshrc}";
+      initExtra = ''
+        ${builtins.readFile ./.zshrc}
+        source ${fzf-git-sh-package}/bin/fzf-git.sh
+      '';
     };
 
     fzf = {
