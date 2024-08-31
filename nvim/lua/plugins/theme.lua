@@ -16,16 +16,3 @@ return {
     everforest.load()
   end,
 }
-
--- return {
---   'sho-87/kanagawa-paper.nvim',
---   lazy = false,
---   priority = 1000,
---   opts = {},
--- }
-
--- return {
---   'fenetikm/falcon',
---   lazy = false,
---   priority = 1000,
--- }
