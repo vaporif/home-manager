@@ -101,7 +101,7 @@
   };
 
   xdg.configFile.nvim.source = ./nvim;
-  xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./config.kdl}";
+  xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./zellij/config.kdl}";
 
   # I don't want to use nix-darwin, easier to manage config via manager
   home.file.".config/alacritty".source = ./alacritty;
