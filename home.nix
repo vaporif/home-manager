@@ -19,6 +19,8 @@
     go
     nodejs_20
     rustup
+    coreutils
+    buf
   ];
 
   programs = {
