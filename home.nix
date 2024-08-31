@@ -21,6 +21,8 @@
     rustup
     coreutils
     buf
+    nerdfonts
+    delta
   ];
 
   programs = {
