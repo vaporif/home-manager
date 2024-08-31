@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
@@ -78,11 +78,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting rust aws docker helm kubectl kubectx terraform brew docker-compose)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting rust docker brew docker-compose)
 # Not ture about zsh-autocomplete
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete rust aws docker helm kubectl kubectx terraform brew docker-compose)
 source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
 
 # User configuration
 
@@ -153,7 +152,6 @@ n ()
 }
 
 #eval "$(zsh)"
-eval "$(zellij setup --generate-auto-start zsh)" 
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
@@ -202,6 +200,7 @@ _fzf_comprun() {
 eval "$(zoxide init zsh)"
 
 alias cd="z"
+alias zj="zellij"
 
 source "$HOME/.gm/bin/shell-support"
 
