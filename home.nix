@@ -13,7 +13,6 @@
     protobuf
     tldr
     hyperfine
-    qemu
     llvm
     pango
     go
