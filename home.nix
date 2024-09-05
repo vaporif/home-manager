@@ -16,10 +16,8 @@
     llvm
     pango
     go
-    gcc
     nodejs_20
     rustup
-    coreutils
     buf
     nerdfonts
     delta
