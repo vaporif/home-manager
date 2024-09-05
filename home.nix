@@ -1,8 +1,4 @@
 {pkgs, ethereum-nix-pkgs, fzf-git-sh-package, ... }: {
-  home.username = "vaporif";
-  home.homeDirectory = "/Users/vaporif";
-  home.stateVersion = "24.11";
-
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -90,10 +86,5 @@
   };
 
   xdg.configFile.nvim.source = ./nvim;
-  xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./zellij/config.kdl}";
 
-  # I don't want to use nix-darwin as support is brittle
-  # easier to install alacritty + karabiner via brew & hook up configs
-  home.file.".config/alacritty".source = ./alacritty;
-  home.file.".config/karabiner".source = ./karabiner;
 }

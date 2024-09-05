@@ -25,7 +25,25 @@
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${arch};
         modules = [ 
-          ./home.nix 
+          {
+            home = {
+              username = "vaporif";
+              homeDirectory = "/Users/vaporif";
+              stateVersion = "24.11";
+            };
+          }
+          ./home.nix  
+          # I don't want to use nix-darwin as support is brittle
+          # easier to install alacritty + karabiner via brew & hook up configs
+          {
+            home.file = {
+              ".config/alacritty".source = ./alacritty;
+              ".config/karabiner".source = ./karabiner;
+            };
+          }
+          {
+            xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./zellij/config.kdl}";
+          }
         ];
         extraSpecialArgs = {
           inherit fzf-git-sh-package;
@@ -34,3 +52,4 @@
       };
     };
 }
+
