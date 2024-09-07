@@ -20,7 +20,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 20
+vim.opt.scrolloff = 15
 vim.lsp.inlay_hint.enable()
 
 -- Highlight when yanking (copying) text
