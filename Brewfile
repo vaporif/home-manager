@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
-brew "coreutils"
 brew "gcc"
 cask "alacritty"
 cask "karabiner-elements"

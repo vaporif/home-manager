@@ -2,24 +2,25 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    cargo-binstall
+    nerdfonts
+    coreutils
     go-ethereum
     nixd
     wget
-    protobuf
-    tldr
-    hyperfine
-    llvm
-    pango
-    go
-    nodejs_20
-    rustup
-    buf
-    nerdfonts
     delta
+    tldr
     direnv
-    pnpm
     bottom
+    hyperfine
+    pango
+    nodejs_20
+    pnpm
+    go
+    rustup
+    cargo-binstall
+    llvm
+    buf
+    protobuf
     ethereum-nix-pkgs.reth
   ];
 
