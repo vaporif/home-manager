@@ -1,4 +1,4 @@
-return { ---- Show current cursor word.
+return {
   'xiyaowong/nvim-cursorword',
   event = 'VeryLazy',
   enabled = true,

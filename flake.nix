@@ -15,15 +15,14 @@
   };
 
   outputs = { nixpkgs, home-manager, ethereum-nix, fzf-git-sh, ... }: let
-    arch = "aarch64-darwin";
-    pkgs = nixpkgs.legacyPackages.${arch};
+    system = "aarch64-darwin";
+    pkgs = import nixpkgs { inherit system; };
     fzf-git-sh-package = pkgs.writeShellScriptBin "fzf-git.sh" (builtins.readFile fzf-git-sh);
-    ethereum-nix-pkgs = ethereum-nix.packages.${arch};
+    ethereum-nix-pkgs = ethereum-nix.packages.${system};
   in {
-    defaultPackage.${arch} = home-manager.defaultPackage.${arch};
     homeConfigurations.vaporif = 
       home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${arch};
+        inherit pkgs;
         modules = [ 
           {
             home = {
