@@ -14,6 +14,7 @@
     hyperfine
     pango
     nodejs_20
+    python310
     pnpm
     go
     rustup
