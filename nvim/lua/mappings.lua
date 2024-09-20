@@ -19,4 +19,4 @@ vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Neotree to
 vim.keymap.set('n', '<Leader>n', '<Cmd>Neotree reveal<CR>', { desc = '[N]eotree toggle' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.api.nvim_set_keymap('n', '<Tab>', '<C-W>W', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Tab>', '<C-W>W', { noremap = true, silent = true })
