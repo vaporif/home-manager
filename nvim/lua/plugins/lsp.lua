@@ -126,7 +126,7 @@ return {
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
       clangd = {},
-      tsserver = {},
+      ts_ls = {},
 
       lua_ls = {
         -- cmd = {...},
@@ -150,7 +150,7 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua',
-      'tsserver',
+      'ts_ls',
       'codelldb',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -158,8 +158,6 @@ return {
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
-          -- TODO: remove rename once mason-lspconfig is updated
-          server_name = server_name == 'tsserver' and 'ts_ls' or server_name
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
