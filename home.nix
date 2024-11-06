@@ -17,6 +17,7 @@
     python310
     pnpm
     go
+    delve
     rustup
     cargo-binstall
     llvm
