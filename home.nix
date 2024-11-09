@@ -19,6 +19,7 @@
     go
     delve
     rustup
+    taplo
     cargo-binstall
     llvm
     buf
