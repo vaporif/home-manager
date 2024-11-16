@@ -1,4 +1,4 @@
-import = ["/Users/vaporif/.alacritty-colorscheme/themes/citylights.toml"]
+general.import = ["/Users/vaporif/.alacritty-colorscheme/themes/citylights.toml"]
 
 [font]
 size = 14.0
