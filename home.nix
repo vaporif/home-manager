@@ -63,6 +63,7 @@
     nnn = {
       enable = true;
       bookmarks = {
+        r = "~/Repos/";
         e = "~/Repos/eiger/";
         m = "~/.config/home-manager/";
       };
@@ -90,5 +91,4 @@
   };
 
   xdg.configFile.nvim.source = ./nvim;
-
 }
