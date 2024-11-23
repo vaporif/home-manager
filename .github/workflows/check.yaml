@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') && github.ref != 'refs/heads/main' }}
 
 jobs:
-  tests:
+  check:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v4

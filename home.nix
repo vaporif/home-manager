@@ -1,4 +1,4 @@
-{pkgs, ethereum-nix-pkgs, fzf-git-sh-package, ... }: {
+{ pkgs, ethereum-nix-pkgs, fzf-git-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
