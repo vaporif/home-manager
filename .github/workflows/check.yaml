@@ -27,8 +27,8 @@ jobs:
 
     - name: Build home-manager configuration
       run: |
-        nix build .#homeConfigurations.dmytro.activationPackage
+        nix build .#homeConfigurations.vaporif.activationPackage
 
     - name: Test build on different systems
       run: |
-        nix build .#homeConfigurations.yourusername.activationPackage --system aarch64-darwin
+        nix build .#homeConfigurations.vaporif.activationPackage --system aarch64-darwin
