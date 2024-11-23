@@ -1,4 +1,5 @@
 # home-manager
+[![check](https://github.com/vaporif/home-manager/actions/workflows/check.yaml/badge.svg?branch=main)](https://github.com/vaporif/home-manager/actions/workflows/check.yaml)
 
 This is my personal configuration for nix [home manager](https://github.com/nix-community/home-manager)
 
