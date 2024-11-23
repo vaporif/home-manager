@@ -1,4 +1,4 @@
-{ pkgs, ethereum-nix-pkgs, fzf-git-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -24,7 +24,6 @@
     llvm
     buf
     protobuf
-    ethereum-nix-pkgs.reth
   ];
 
   programs = {

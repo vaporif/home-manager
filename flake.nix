@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    ethereum-nix.url = "github:nix-community/ethereum.nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,12 +13,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ethereum-nix, fzf-git-sh, ... }:
+  outputs = { nixpkgs, home-manager, fzf-git-sh, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
       fzf-git-sh-package = pkgs.writeShellScriptBin "fzf-git.sh" (builtins.readFile fzf-git-sh);
-      ethereum-nix-pkgs = ethereum-nix.packages.${system};
     in
     {
       homeConfigurations.vaporif =
@@ -48,7 +46,6 @@
           ];
           extraSpecialArgs = {
             inherit fzf-git-sh-package;
-            inherit ethereum-nix-pkgs;
           };
         };
     };
