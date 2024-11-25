@@ -7,17 +7,24 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lfcd-sh = {
+      url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/lfcd.sh";
+      flake = false;
+    };
+
     fzf-git-sh = {
       url = "https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh";
       flake = false;
     };
   };
 
-  outputs = { nixpkgs, home-manager, fzf-git-sh, ... }:
+  outputs = { nixpkgs, home-manager, fzf-git-sh, lfcd-sh, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
       fzf-git-sh-package = pkgs.writeShellScriptBin "fzf-git.sh" (builtins.readFile fzf-git-sh);
+      lfcd-sh-package = pkgs.writeShellScriptBin "lfcd.sh" (builtins.readFile lfcd-sh);
     in
     {
       homeConfigurations.vaporif =
@@ -45,7 +52,7 @@
             }
           ];
           extraSpecialArgs = {
-            inherit fzf-git-sh-package;
+            inherit fzf-git-sh-package lfcd-sh-package;
           };
         };
     };
