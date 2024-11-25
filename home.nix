@@ -16,11 +16,9 @@
     nodejs_20
     python310
     pnpm
-    ripgrep-all
     go
     delve
     rustup
-    vifm
     taplo
     cargo-binstall
     llvm
