@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -16,9 +16,11 @@
     nodejs_20
     python310
     pnpm
+    ripgrep-all
     go
     delve
     rustup
+    vifm
     taplo
     cargo-binstall
     llvm
@@ -32,6 +34,22 @@
     gh.enable = true;
     bat.enable = true;
     lazygit.enable = true;
+    lf = {
+      enable = true;
+
+      keybindings = {
+        "." = "set hidden!";
+        e = "$$EDITOR $f";
+        "f" = null;
+        # ft = "$$EDITOR $(fzf)";
+        br = "cd ~/Repos/";
+        be = "cd ~/Repos/eiger/";
+        bm = "cd ~/.config/home-manager/";
+      };
+
+      # NOTE: escaping scripts is not cool so just readFile
+      extraConfig = builtins.readFile ./lf.config;
+    };
 
     zsh = {
       enable = true;
@@ -39,6 +57,8 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+        t = "lfcd";
+        lf = "lfcd";
         lg = "lazygit";
         ls = "eza -a";
         cat = "bat";
@@ -51,6 +71,7 @@
       initExtra = ''
         ${builtins.readFile ./.zshrc}
         source ${fzf-git-sh-package}/bin/fzf-git.sh
+        source ${lfcd-sh-package}/bin/lfcd.sh
       '';
     };
 
