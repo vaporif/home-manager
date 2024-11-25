@@ -41,7 +41,6 @@
         "." = "set hidden!";
         e = "$$EDITOR $f";
         "f" = null;
-        # ft = "$$EDITOR $(fzf)";
         br = "cd ~/Repos/";
         be = "cd ~/Repos/eiger/";
         bm = "cd ~/.config/home-manager/";
