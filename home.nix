@@ -13,7 +13,7 @@
     bottom
     hyperfine
     pango
-    nodejs_20
+    nodejs_22
     python310
     pnpm
     go
@@ -45,7 +45,7 @@
       };
 
       # NOTE: escaping scripts is not cool so just readFile
-      extraConfig = builtins.readFile ./lf.config;
+      extraConfig = builtins.readFile ./lfrc;
     };
 
     zsh = {
