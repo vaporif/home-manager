@@ -24,6 +24,27 @@ It's used only for karabiner and alacritty as nix installation for them is eithe
 Run the initial setup which will build all the derivations which may take a while.
 
 6. Override home manager dir with this repo and install packages in this nix flake
+
+Make sure to update username & home path in `flake.nix`
+```
+      homeConfigurations.vaporif =
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            {
+              home = {
+                username = "vaporif";
+                homeDirectory = "/Users/vaporif";
+                stateVersion = "24.05";
+              };
+            }
+
+```
+and nvim lazy-lock path in `nvim/init.lua`
+```
+  lockfile = '/Users/vaporif/.config/home-manager/nvim/lazy-lock.json',
+```
+
 ```shell
 home-manager switch
 ```

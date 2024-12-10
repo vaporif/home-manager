@@ -71,6 +71,7 @@ require('lazy').setup({
   require 'plugins.lualine',
   'mg979/vim-visual-multi',
   require 'plugins.mini',
+  { 'powerman/vim-plugin-AnsiEsc' },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.treesitter',
   require 'plugins.treesitter-context',
@@ -99,6 +100,7 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  lockfile = '/Users/vaporif/.config/home-manager/nvim/lazy-lock.json',
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
