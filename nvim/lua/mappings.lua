@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>cr', '<cmd>RustLsp runnables<Cr>', { desc = '[R]unn
 vim.keymap.set('n', '<leader>ct', '<cmd>RustLsp testables<Cr>', { desc = '[T]estables' })
 vim.keymap.set('n', '<leader>ca', '<cmd>RustLsp codeAction<Cr>', { desc = '[A]ction' })
 vim.keymap.set('n', '<leader>cD', '<cmd>RustLsp renderDiagnostic<Cr>', { desc = '[D]iagnostic' })
+vim.keymap.set('n', '<leader>ci', '<cmd>AnsiEsc<Cr>', { desc = 'Ans[i] escape' })
 vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp debuggables<Cr>', { desc = '[d]ebug' })
 vim.keymap.set('n', '<leader>co', '<cmd>LspStop<Cr>', { desc = 'Lsp st[o]p' })
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'Toggle Comment', remap = true })
