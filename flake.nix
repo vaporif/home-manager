@@ -9,12 +9,12 @@
     };
 
     lfcd-sh = {
-      url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/lfcd.sh";
+      url = "https://raw.githubusercontent.com/gokcehan/lf/8bfa3a6d347cad3940d224d14181f58bbf39811e/etc/lfcd.sh";
       flake = false;
     };
 
     fzf-git-sh = {
-      url = "https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh";
+      url = "https://raw.githubusercontent.com/junegunn/fzf-git.sh/28b544a7b6d284b8e46e227b36000089b45e9e00/fzf-git.sh";
       flake = false;
     };
   };
