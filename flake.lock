@@ -5,11 +5,11 @@
       "locked": {
         "narHash": "sha256-RgRP767r4JNXDDicS36YG5czvCRq3FLcE6T0Q31TGgI=",
         "type": "file",
-        "url": "https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh"
+        "url": "https://raw.githubusercontent.com/junegunn/fzf-git.sh/28b544a7b6d284b8e46e227b36000089b45e9e00/fzf-git.sh"
       },
       "original": {
         "type": "file",
-        "url": "https://raw.githubusercontent.com/junegunn/fzf-git.sh/main/fzf-git.sh"
+        "url": "https://raw.githubusercontent.com/junegunn/fzf-git.sh/28b544a7b6d284b8e46e227b36000089b45e9e00/fzf-git.sh"
       }
     },
     "home-manager": {
@@ -19,11 +19,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734622215,
-        "narHash": "sha256-OOfI0XhSJGHblfdNDhfnn8QnZxng63rWk9eeJ2tCbiI=",
+        "lastModified": 1735053786,
+        "narHash": "sha256-Gm+0DcbUS338vvkwyYWms5jsWlx8z8MeQBzcnIDuIkw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1395379a7a36e40f2a76e7b9936cc52950baa1be",
+        "rev": "35b98d20ca8f4ca1f6a2c30b8a2c8bb305a36d84",
         "type": "github"
       },
       "original": {
@@ -37,20 +37,20 @@
       "locked": {
         "narHash": "sha256-QB9OjYdGfEpiPWQ2OUWSAYjcg4PXLRhKkubAsQGc57A=",
         "type": "file",
-        "url": "https://raw.githubusercontent.com/gokcehan/lf/master/etc/lfcd.sh"
+        "url": "https://raw.githubusercontent.com/gokcehan/lf/8bfa3a6d347cad3940d224d14181f58bbf39811e/etc/lfcd.sh"
       },
       "original": {
         "type": "file",
-        "url": "https://raw.githubusercontent.com/gokcehan/lf/master/etc/lfcd.sh"
+        "url": "https://raw.githubusercontent.com/gokcehan/lf/8bfa3a6d347cad3940d224d14181f58bbf39811e/etc/lfcd.sh"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1734424634,
-        "narHash": "sha256-cHar1vqHOOyC7f1+tVycPoWTfKIaqkoe1Q6TnKzuti4=",
+        "lastModified": 1734649271,
+        "narHash": "sha256-4EVBRhOjMDuGtMaofAIqzJbg4Ql7Ai0PSeuVZTHjyKQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d3c42f187194c26d9f0309a8ecc469d6c878ce33",
+        "rev": "d70bd19e0a38ad4790d3913bf08fcbfc9eeca507",
         "type": "github"
       },
       "original": {
