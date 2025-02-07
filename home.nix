@@ -14,7 +14,9 @@
     hyperfine
     pango
     nodejs_22
-    python310
+    (python3.withPackages (ps: with ps; [
+      pip
+    ]))
     pnpm
     go
     delve
