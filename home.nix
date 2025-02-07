@@ -16,6 +16,7 @@
     nodejs_22
     (python3.withPackages (ps: with ps; [
       pip
+      toml
     ]))
     pnpm
     go
