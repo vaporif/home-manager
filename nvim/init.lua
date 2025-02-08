@@ -61,7 +61,6 @@ require('lazy').setup({
   require 'plugins.telescope',
   require 'plugins.lazydev',
   require 'plugins.lazygit',
-  { 'Bilal2453/luvit-meta', lazy = true },
   require 'plugins.autopairs',
   require 'plugins.dashboard',
   require 'plugins.lsp',
