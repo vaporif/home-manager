@@ -63,6 +63,7 @@ require('lazy').setup({
   require 'plugins.lazygit',
   require 'plugins.autopairs',
   require 'plugins.dashboard',
+  require 'plugins.snacks',
   require 'plugins.lsp',
   require 'plugins.cmp',
   require 'plugins.rustacean',
