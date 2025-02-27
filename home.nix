@@ -75,6 +75,39 @@
       '';
     };
 
+    git = {
+      enable = true;
+      userName = "Dmytro Onypko";
+      userEmail = "vaporif@gmail.com";
+      aliases = {
+        co = "checkout";
+        cob = "checkout -b";
+        discard = "reset HEAD --hard";
+        fp = "fetch --all --prune";
+      };
+      signing = {
+        key = "68EFF4350C9C15CD";
+        signByDefault = true;
+        format = "openpgp";
+      };
+
+      extraConfig = {
+        pull.ff = "only";
+        push.autoSetupRemote = true;
+        gui.encoding = "utf-8";
+        merge.conflictstyle = "diff3";
+        init.defaultBranch = "main";
+        rebase.autosquash = true;
+        rebase.autostash = true;
+        commit.verbose = true;
+        diff.colorMoved = true;
+        diff.algorithm = "histogram";
+        feature.experimental = true;
+        help.autocorrect = "prompt";
+        branch.sort = "committerdate";
+      };
+    };
+
     fzf = {
       enable = true;
       enableZshIntegration = true;
