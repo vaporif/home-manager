@@ -25,6 +25,7 @@
     taplo
     cargo-binstall
     llvm
+    gcc
     buf
     protobuf
   ];
