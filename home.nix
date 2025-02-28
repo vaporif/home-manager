@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, lfcd-sh-package, ... }: {
+{ pkgs, lib, fzf-git-sh-package, lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -26,9 +26,12 @@
     cargo-binstall
     llvm
     gcc
+    libiconv
     buf
     protobuf
   ];
+
+  home.sessionVariables.LIBRARY_PATH = ''${lib.makeLibraryPath [pkgs.libiconv]}''${LIBRARY_PATH:+:$LIBRARY_PATH}'';
 
   programs = {
     ripgrep.enable = true;
