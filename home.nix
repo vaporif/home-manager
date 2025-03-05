@@ -26,12 +26,27 @@
     cargo-binstall
     llvm
     gcc
+    pkg-config
+    cmake
     libiconv
     buf
     protobuf
   ];
+  home.file.".npmrc".text = ''
+    prefix=''${HOME}/.npm-global
+  '';
 
-  home.sessionVariables.LIBRARY_PATH = ''${lib.makeLibraryPath [pkgs.libiconv]}''${LIBRARY_PATH:+:$LIBRARY_PATH}'';
+  home.sessionVariables = {
+    PATH = "$HOME/.npm-global/bin:$PATH";
+    LIBRARY_PATH = ''${lib.makeLibraryPath [pkgs.libiconv]}''${LIBRARY_PATH:+:$LIBRARY_PATH}'';
+  };
+
+  home.activation = {
+    installDevContainersCli = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      $DRY_RUN_CMD mkdir -p $HOME/.npm-global
+      $DRY_RUN_CMD ${pkgs.nodePackages.npm}/bin/npm install -g @devcontainers/cli
+    '';
+  };
 
   programs = {
     ripgrep.enable = true;
