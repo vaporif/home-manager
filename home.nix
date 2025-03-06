@@ -77,7 +77,6 @@
         ${builtins.readFile ./.zshrc}
         source ${fzf-git-sh-package}/bin/fzf-git.sh
         source ${lfcd-sh-package}/bin/lfcd.sh
-        source $HOME/.cargo/env
       '';
     };
 
