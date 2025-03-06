@@ -1,4 +1,8 @@
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib:$PATH
+export LIBRARY_PATH="$LIBRARY_PATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib" # Needed for Rust compilation and linking
 
 ulimit -Sn 4096      # Increase open files.
 ulimit -Sl unlimited # Increase max locked memory.
