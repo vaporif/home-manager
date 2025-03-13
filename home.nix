@@ -13,7 +13,6 @@
     hyperfine
     pango
     nodejs_22
-    bun
     (python3.withPackages (ps: with ps; [
       pip
       toml
