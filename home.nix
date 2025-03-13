@@ -9,11 +9,11 @@
     wget
     delta
     tldr
-    direnv
     bottom
     hyperfine
     pango
     nodejs_22
+    bun
     (python3.withPackages (ps: with ps; [
       pip
       toml
@@ -54,6 +54,11 @@
 
       # NOTE: escaping scripts is not cool so just readFile
       extraConfig = builtins.readFile ./lfrc;
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
     };
 
     zsh = {

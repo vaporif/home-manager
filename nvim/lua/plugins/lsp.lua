@@ -135,6 +135,9 @@ return {
     local servers = {
       clangd = {},
       ts_ls = {},
+      cairo_ls = {
+        cmd = { 'cairo-language-server', '/C', '--node-ipc' },
+      },
 
       lua_ls = {
         -- cmd = {...},
@@ -152,7 +155,9 @@ return {
       },
     }
 
-    require('lspconfig').nixd.setup {}
+    local lspconfig = require 'lspconfig'
+    lspconfig.nixd.setup {}
+    lspconfig.cairo_ls.setup {}
     require('mason').setup()
 
     local ensure_installed = vim.tbl_keys(servers or {})
