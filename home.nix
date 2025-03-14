@@ -4,33 +4,13 @@
   home.packages = with pkgs; [
     nerd-fonts.hack
     coreutils
-    go-ethereum
-    nixd
     wget
     delta
     tldr
     bottom
     hyperfine
     pango
-    nodejs_22
-    (python3.withPackages (ps: with ps; [
-      pip
-      toml
-    ]))
-    pnpm
-    go
-    delve
-    rustup
-    taplo
-    cargo-binstall
-    llvm
-    gcc
-    libiconv
-    buf
-    protobuf
   ];
-
-  home.sessionVariables.LIBRARY_PATH = ''${lib.makeLibraryPath [pkgs.libiconv]}''${LIBRARY_PATH:+:$LIBRARY_PATH}'';
 
   programs = {
     ripgrep.enable = true;
