@@ -10,6 +10,7 @@
     bottom
     hyperfine
     pango
+    nixd
   ];
 
   programs = {
