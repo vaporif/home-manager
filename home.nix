@@ -39,6 +39,7 @@
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+      stdlib = builtins.readFile ./direnvrc;
     };
 
     zsh = {
@@ -138,4 +139,6 @@
     url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example";
     sha256 = "12cwy6kfa2wj7nzffaxn5bka21yjqa5sx38nzdhyg1dq0c6jnjkk";
   };
+
+  # xdg.configFile."direnv/direnvrc"
 }
