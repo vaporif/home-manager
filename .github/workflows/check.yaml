@@ -12,8 +12,8 @@ jobs:
   check:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: cachix/install-nix-action@v25
+    - uses: actions/checkout@v11bd719
+    - uses: cachix/install-nix-action@v02a151a
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
     
