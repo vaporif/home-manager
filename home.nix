@@ -10,6 +10,7 @@
     bottom
     hyperfine
     pango
+    lua-language-server
   ];
 
   programs = {
