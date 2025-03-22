@@ -1,4 +1,4 @@
-{ pkgs, config, lib, fzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
+{ pkgs, fwzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
