@@ -183,7 +183,7 @@
                                 "to": [
                                     {
                                         "key_code": "k",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": ["control"]
                                     }
                                 ],
                                 "type": "basic"
@@ -210,7 +210,7 @@
                                     },
                                     {
                                         "key_code": "period",
-                                        "modifiers": ["left_shift"]
+                                        "modifiers": ["shift"]
                                     }
                                 ],
                                 "type": "basic"
