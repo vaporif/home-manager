@@ -80,7 +80,7 @@ require('lazy').setup({
   require 'plugins.neo-tree',
   require 'plugins.dap',
   require 'plugins.trouble',
-  require 'plugins.neogit',
+  -- require 'plugins.neogit',
   require 'plugins.cursorword',
   require 'plugins.theme',
 }, {

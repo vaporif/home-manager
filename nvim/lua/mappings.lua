@@ -12,12 +12,17 @@ vim.keymap.set('n', '<leader>ca', '<cmd>RustLsp codeAction<Cr>', { desc = '[A]ct
 vim.keymap.set('n', '<leader>cD', '<cmd>RustLsp renderDiagnostic<Cr>', { desc = '[D]iagnostic' })
 vim.keymap.set('n', '<leader>ci', '<cmd>AnsiEsc<Cr>', { desc = 'Ans[i] escape' })
 vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp debuggables<Cr>', { desc = '[d]ebug' })
-vim.keymap.set('n', '<leader>co', '<cmd>LspStop<Cr>', { desc = 'Lsp st[o]p' })
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'Toggle Comment', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'Toggle comment', remap = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'Save' })
-vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Neotree toggl[e]' })
+vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree float toggle reveal<CR>', { desc = 'Neotree toggl[e]' })
 vim.keymap.set('n', '<Leader>n', '<Cmd>Neotree reveal<CR>', { desc = '[N]eotree toggle' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
--- vim.api.nvim_set_keymap('n', '<Tab>', '<C-W>W', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>co', function()
+  for _, client in pairs(vim.lsp.get_clients()) do
+    vim.lsp.stop_client(client.id)
+  end
+
+  vim.cmd 'LspStart'
+end, { desc = 'Lsp st[o]p-start' })
