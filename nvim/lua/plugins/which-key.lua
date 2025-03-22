@@ -41,9 +41,10 @@ return {
       },
     }
 
-    -- Document existing key chains
     require('which-key').add {
       { '<leader>x', group = 'Trouble' },
+      { '<leader>b', group = '[B]uffer' },
+      { '<leader>b', group = '[S]plit' },
       { '<leader>g', group = '[G]it' },
       { '<leader>f', group = '[F]ind' },
       { '<leader>c', group = '[C]ode' },
