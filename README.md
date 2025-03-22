@@ -23,7 +23,7 @@ It's used only for karabiner and alacritty as nix installation for them is eithe
 
 Run the initial setup which will build all the derivations which may take a while.
 
-6. Override home manager dir with this repo and install packages in this nix flake
+6. Override home manager dir with this repo
 
 Make sure to update username & home path in `flake.nix`
 ```
@@ -56,6 +56,5 @@ home-manager switch
 direnv allow ~
 ```
 ## Learning
-
 
 - https://nix.dev/recommended-reading
