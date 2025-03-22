@@ -1,8 +1,8 @@
 layout {
-    pane split_direction="horizontal" size="80%" {
+    pane {
+    }
+    pane split_direction="horizontal" size="20%" {
         pane edit="Cargo.toml"
         focus true
-    }
-    pane {
     }
 }
