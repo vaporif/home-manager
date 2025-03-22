@@ -36,11 +36,11 @@ n ()
 }
 
 tofnd-auto() {
-  tofnd &
-  local pid=$!
+  w
+  sleep 2
+  tofnd 
   sleep 0.5
   echo -n "eiger123!"
-  fg
 }
 
 open_work_layout() {
@@ -48,4 +48,4 @@ open_work_layout() {
   zellij --layout ~/.config/layouts/relayer
 }
 
-alias w='open_work_layout'
+alias w='cd ~/Repos/giza-axelar-starknet'
