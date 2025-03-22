@@ -35,7 +35,7 @@ n ()
     fi
 }
 
-run_tofnd() {
+tofnd-auto() {
   tofnd &
   local pid=$!
   sleep 0.5
@@ -43,5 +43,9 @@ run_tofnd() {
   fg
 }
 
-alias tofnd-auto='run_tofnd'
-alias w='zellij --layout relayer'
+open_work_layout() {
+  cd ~/Repos/giza-axelar-starknet
+  zellij --layout ~/.config/layouts/relayer
+}
+
+alias w='open_work_layout'
