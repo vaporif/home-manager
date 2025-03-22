@@ -35,3 +35,13 @@ n ()
     fi
 }
 
+run_tofnd() {
+  tofnd &
+  local pid=$!
+  sleep 0.5
+  echo -n "eiger123!"
+  fg
+}
+
+alias tofnd-auto='run_tofnd'
+alias w='zellij --layout relayer'

@@ -1,8 +1,7 @@
 layout {
-    pane {
-    }
-    pane split_direction="horizontal" size="20%" {
-        pane edit="Cargo.toml"
-        focus true
+    tab name="nvim" {
+        pane focus=true edit="Cargo.toml" split_direction="horizontal" size="20%" {
+            pane 
+        }
     }
 }
