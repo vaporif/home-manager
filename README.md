@@ -51,8 +51,8 @@ home-manager switch
 
 7. Allow direnv .envrc for default devshell
 
-shell
-```
+
+```shell
 direnv allow ~
 ```
 ## Learning
