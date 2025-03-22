@@ -184,7 +184,7 @@
                                     {
                                         "key_code": "k",
                                         "modifiers": ["left_control"]
-                                    },
+                                    }
                                 ],
                                 "type": "basic"
                             },
@@ -205,12 +205,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "-",
+                                        "key_code": "hyphen",
                                         "modifiers": []
                                     },
                                     {
-                                        "key_code": ".",
-                                        "modifiers": []
+                                        "key_code": "period",
+                                        "modifiers": [shift]
                                     }
                                 ],
                                 "type": "basic"
