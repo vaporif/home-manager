@@ -135,7 +135,7 @@
     };
   };
   home.file.".envrc".text = ''
-   use flake github:vaporif/devshell
+    use flake github:vaporif/devshell
   '';
 
   xdg.configFile.nvim.source = ./nvim;
