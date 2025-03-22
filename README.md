@@ -48,6 +48,14 @@ and nvim lazy-lock path in `nvim/init.lua`
 ```shell
 home-manager switch
 ```
+
+7. Allow direnv .envrc for default devshell
+
+shell
+```
+direnv allow ~
+```
 ## Learning
+
 
 - https://nix.dev/recommended-reading

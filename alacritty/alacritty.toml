@@ -1,4 +1,4 @@
-general.import = ["/Users/vaporif/.alacritty-colorscheme/themes/citylights.toml"]
+general.import = ["~/.config/.alacritty-colorscheme/themes/everforest_dark.toml"]
 
 [font]
 size = 14.0

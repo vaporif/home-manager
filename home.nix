@@ -1,4 +1,4 @@
-{ pkgs, lib, fzf-git-sh-package, lfcd-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -134,10 +134,17 @@
       enableZshIntegration = true;
     };
   };
+  home.file.".envrc".text = ''
+    use flake github:vaporif/devshell
+  '';
 
   xdg.configFile.nvim.source = ./nvim;
   xdg.configFile."lf/icons".source = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example";
     sha256 = "12cwy6kfa2wj7nzffaxn5bka21yjqa5sx38nzdhyg1dq0c6jnjkk";
+  };
+  xdg.configFile.".alacritty-colorscheme/" = {
+    source = "${alacritty-themes-package}";
+    recursive = true;
   };
 }

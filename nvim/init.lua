@@ -73,6 +73,7 @@ require('lazy').setup({
   'mg979/vim-visual-multi',
   require 'plugins.mini',
   { 'powerman/vim-plugin-AnsiEsc' },
+  { 'sindrets/diffview.nvim' },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.treesitter',
   require 'plugins.treesitter-context',
@@ -80,7 +81,6 @@ require('lazy').setup({
   require 'plugins.neo-tree',
   require 'plugins.dap',
   require 'plugins.trouble',
-  require 'plugins.neogit',
   require 'plugins.cursorword',
   require 'plugins.theme',
 }, {
