@@ -82,6 +82,7 @@ require('lazy').setup({
   require 'plugins.lualine',
   'mg979/vim-visual-multi',
   require 'plugins.mini',
+  { 'svermeulen/vim-subversive' },
   { 'powerman/vim-plugin-AnsiEsc' },
   { 'sindrets/diffview.nvim' },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
