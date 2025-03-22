@@ -182,12 +182,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "k",
+                                        "key_code": "n",
                                         "modifiers": ["left_control"]
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
                         ]
                     }
                 ]
