@@ -182,10 +182,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "a",
-                                        "modifiers": ["left_option"]
+                                        "key_code": "k",
+                                        "modifiers": ["left_control"]
                                     },
-                                    { "key_code": "w" }
                                 ],
                                 "type": "basic"
                             },
@@ -198,7 +197,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "r",
                                     "modifiers": {
                                         "mandatory": [],
                                         "optional": ["any"]
@@ -206,8 +205,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "a",
-                                        "modifiers": ["left_option"]
+                                        "key_code": "hyphen",
+                                        "modifiers": []
+                                    },
+                                    {
+                                        "key_code": "period",
+                                        "modifiers": ["shift"]
                                     }
                                 ],
                                 "type": "basic"
