@@ -1,4 +1,4 @@
-{ pkgs, fwzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -134,7 +134,9 @@
       enableZshIntegration = true;
     };
   };
-
+  home.file.".envrc".text = ''
+   use flake github:vaporif/devshell
+  '';
 
   xdg.configFile.nvim.source = ./nvim;
   xdg.configFile."lf/icons".source = builtins.fetchurl {

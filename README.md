@@ -50,4 +50,11 @@ home-manager switch
 ```
 ## Learning
 
+7. Allow direnv .envrc for default devshell
+
+shell
+```
+direnv allow ~
+```
+
 - https://nix.dev/recommended-reading
