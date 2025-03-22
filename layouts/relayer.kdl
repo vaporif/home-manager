@@ -1,14 +1,14 @@
 layout {
     tab name="nvim relayer" focus=true {
         pane split_direction="horizontal" {
-            pane edit="Cargo.toml" size="80%"
+            pane command="nvim" size="80%"
             pane
         }
     }
     tab name="infra" {
         pane split_direction="horizontal" {
-            pane command="ampd -c amp-config.toml" size="70%"
-            pane command="tofnd-auto" focus=true
+            pane command="ampd -c amp-config.toml" size="70%" start_suspended=false
+            pane command="tofnd-auto" focus=true start_suspended=false
         }
     }
     tab name="relayer" {
