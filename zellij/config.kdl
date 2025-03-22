@@ -16,8 +16,8 @@ keybinds {
         bind "h" { SwitchToMode "Move"; }
         bind "s" { SwitchToMode "Scroll"; }
         bind "o" { SwitchToMode "Session"; }
-        bind "c" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "x" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "x" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "c" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
