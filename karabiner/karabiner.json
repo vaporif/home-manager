@@ -205,12 +205,12 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "hyphen",
+                                        "key_code": "-",
                                         "modifiers": []
                                     },
                                     {
-                                        "key_code": "period",
-                                        "modifiers": ["shift"]
+                                        "key_code": ".",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
