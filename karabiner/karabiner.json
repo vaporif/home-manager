@@ -210,7 +210,7 @@
                                     },
                                     {
                                         "key_code": "period",
-                                        "modifiers": [shift]
+                                        "modifiers": ["left_shift"]
                                     }
                                 ],
                                 "type": "basic"
