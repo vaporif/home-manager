@@ -145,10 +145,4 @@
     source = "${alacritty-themes-package}";
     recursive = true;
   };
-  # xdg.configFile."alacritty/alacritty.toml".text = ''
-  #   [general]
-  #   import = [
-  #       "~/.config/alacritty/customizaion/themes/everforest_dark.toml"
-  #   ]
-  # '';
 }
