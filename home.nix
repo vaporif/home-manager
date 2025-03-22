@@ -132,25 +132,6 @@
     zellij = {
       enable = true;
       enableZshIntegration = true;
-      default = ''
-      layout {
-          tab name="nvim relayer" focus=true {
-              pane split_direction="horizontal" {
-                  pane command="nvim" size="80%"
-                  pane
-              }
-          }
-          tab name="infra" {
-              pane split_direction="horizontal" {
-                  pane command="ampd -c amp-config.toml" size="70%" start_suspended=false
-                  pane command="tofnd-auto" focus=true start_suspended=false
-              }
-          }
-          tab name="relayer" {
-              pane command="cargo run"
-          }
-      }
-      '';
     };
   };
   home.file.".envrc".text = ''
