@@ -19,6 +19,8 @@ vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree float toggle reveal_force_cwd<CR>
 vim.keymap.set('n', '<Leader>a', '<Cmd>Neotree float git_status toggle reveal<CR>', { desc = 'Git st[a]tus' })
 
 -- Buffers
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { noremap = true, desc = '[N]ext buffer' })
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { noremap = true, desc = '[P]revious buffer' })
 vim.keymap.set('n', '<leader>bb', '<C-^>', { noremap = true, desc = 'Toggle previous [b]uffer' })
 vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { noremap = true, desc = 'Close current' })
 vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', { noremap = true, desc = 'Close except current' })
