@@ -34,7 +34,7 @@ return {
       --   mappings = {
       --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
       --   },
-      -- },
+      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {

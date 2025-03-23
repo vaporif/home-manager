@@ -36,3 +36,4 @@ n ()
 
 alias ghc="gh pr create --title "$(git log --reverse --pretty=format:"%s" $(git merge-base HEAD origin/main)..HEAD | head -1)""
 alias ghl="gh pr list"
+alias ghm="'gh pr merge --squash --delete-branch'"
