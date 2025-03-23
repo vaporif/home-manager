@@ -27,7 +27,10 @@ return {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
+      defaults = {
+        preview = {
+          filesize_limit = 3
+        },
       --   mappings = {
       --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
       --   },
