@@ -7,7 +7,8 @@ vim.keymap.set('n', '<leader>cr', '<cmd>RustLsp runnables<Cr>', { desc = '[R]unn
 vim.keymap.set('n', '<leader>ct', '<cmd>RustLsp testables<Cr>', { desc = '[T]estables' })
 vim.keymap.set('n', '<leader>ca', '<cmd>RustLsp codeAction<Cr>', { desc = '[A]ction' })
 vim.keymap.set('n', '<leader>cD', '<cmd>RustLsp renderDiagnostic<Cr>', { desc = '[D]iagnostic' })
-vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp debuggables<Cr>', { desc = '[d]ebug' })
+vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp debuggables<Cr>', { desc = '[D]ebug' })
+vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp logFile<Cr>', { desc = '[L]og file' })
 
 vim.keymap.set('n', '<leader>ci', '<cmd>AnsiEsc<Cr>', { desc = 'Ans[i] escape' })
 vim.keymap.set('n', '<leader>v', '<cmd>DiffviewOpen<Cr>', { desc = 'diff' })
@@ -38,3 +39,9 @@ vim.keymap.set('n', '<leader>co', function()
 
   vim.cmd 'LspStart'
 end, { desc = 'Lsp st[o]p-start' })
+
+-- subversive
+vim.keymap.set('n', 's', '<Plug>(SubversiveSubstitute)', {})
+vim.keymap.set('n', 'ss', '<Plug>(SubversiveSubstituteLine)', {})
+vim.keymap.set('n', 'S', '<Plug>(SubversiveSubstituteToEndOfLine)', {})
+vim.keymap.set('x', 's', '<Plug>(SubversiveSubstitute)', {})
