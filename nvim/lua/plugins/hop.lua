@@ -6,12 +6,12 @@ return {
   },
   keys = {
     {
-      '<leader>fq',
+      '<leader>q',
       function()
         require('hop').hint_words()
       end,
       mode = { 'n', 'x', 'o' },
-      desc = '[S]earch [Q]uick Hop',
+      desc = '[Q]uick Hop',
     },
   },
 }
