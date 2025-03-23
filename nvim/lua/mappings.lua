@@ -29,7 +29,7 @@ vim.keymap.set('n', '<leader>st', '<C-w>w', { noremap = true, desc = '[T]oggle s
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, desc = 'Split [v]ertically' })
 vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, desc = 'Split [h]orizontally' })
 vim.keymap.set('n', '<leader>m', '<C-w>w', { noremap = true, desc = 'Split toggle' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>s', ':SearchAndSub<CR>', { noremap = true, silent = true, desc = '[M]ulti replace' })
 vim.keymap.set('n', '<leader>co', function()
