@@ -42,17 +42,17 @@ return {
     }
 
     require('which-key').add {
-      { '<leader>x', group = 'Trouble' },
-      { '<leader>b', group = '[B]uffer' },
-      { '<leader>s', group = '[S]plit' },
-      { '<leader>g', group = '[G]it' },
-      { '<leader>f', group = '[F]ind' },
-      { '<leader>c', group = '[C]ode' },
-      { '<leader>d', group = '[D]ocument' },
-      { '<leader>r', group = '[R]ename' },
-      { '<leader>w', group = '[W]rite' },
-      { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      { '<leader>x', group = 'e[x]plain errors' },
+      { '<leader>b', group = '[b]uffer' },
+      { '<leader>s', group = '[s]plit' },
+      { '<leader>g', group = '[g]it' },
+      { '<leader>f', group = '[f]ind' },
+      { '<leader>c', group = '[c]ode' },
+      { '<leader>d', group = '[d]ocument' },
+      { '<leader>r', group = '[r]ename' },
+      { '<leader>w', group = '[w]rite' },
+      { '<leader>t', group = '[t]oggle' },
+      { '<leader>h', group = 'git [h]unk', mode = { 'n', 'v' } },
     }
   end,
 }

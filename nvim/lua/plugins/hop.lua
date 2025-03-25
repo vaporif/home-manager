@@ -11,7 +11,7 @@ return {
         require('hop').hint_words()
       end,
       mode = { 'n', 'x', 'o' },
-      desc = '[Q]uick Hop',
+      desc = '[q]uick hop',
     },
   },
 }

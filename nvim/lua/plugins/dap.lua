@@ -42,7 +42,7 @@ return {
       function()
         require('dap').toggle_breakpoint()
       end,
-      desc = 'Debug: Toggle [B]reakpoint',
+      desc = 'toggle [b]reakpoint',
     },
     {
       '<F7>',
