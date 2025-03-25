@@ -37,7 +37,7 @@ vim.keymap.set('n', '<leader>co', function()
   end
 
   vim.cmd 'LspStart'
-end, { desc = 'st[o]p-start' })
+end, { desc = 'LSP st[o]p-start' })
 
 -- subversive
 vim.keymap.set('n', 's', '<Plug>(SubversiveSubstitute)', {})
