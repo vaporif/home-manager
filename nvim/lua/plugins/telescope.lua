@@ -29,11 +29,11 @@ return {
       --
       defaults = {
         preview = {
-          filesize_limit = 3
+          filesize_limit = 3,
         },
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
+        --   mappings = {
+        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        --   },
       },
       -- pickers = {}
       extensions = {
@@ -50,16 +50,16 @@ return {
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', ';', ':', { desc = 'CMD enter command mode' })
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
-    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
-    vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
-    vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
-    vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
-    vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
-    vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[h]elp' })
+    vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[k]eymaps' })
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]iles' })
+    vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[s]elect telescope' })
+    vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'current [w]ord' })
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[g]rep' })
+    vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[d]iagnostics' })
+    vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[r]esume' })
+    vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'recent ("[.]" for repeat)' })
+    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] existing buffers' })
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>.', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -76,11 +76,11 @@ return {
         grep_open_files = true,
         prompt_title = 'Live Grep in Open Files',
       }
-    end, { desc = '[F]ind [/] in Open Files' })
+    end, { desc = '[/] in open files' })
 
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set('n', '<leader>fn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
-    end, { desc = '[F]ind [N]eovim files' })
+    end, { desc = 'find [n]eovim files' })
   end,
 }
