@@ -9,9 +9,9 @@ vim.keymap.set('n', '<leader>ca', '<cmd>RustLsp codeAction<Cr>', { desc = '[A]ct
 vim.keymap.set('n', '<leader>cD', '<cmd>RustLsp renderDiagnostic<Cr>', { desc = '[D]iagnostic' })
 vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp debuggables<Cr>', { desc = '[D]ebug' })
 vim.keymap.set('n', '<leader>cd', '<cmd>RustLsp logFile<Cr>', { desc = '[L]og file' })
-
+vim.keymap.set('n', '<leader>cl', '<cmd>DiffviewOpen<Cr>', { desc = 'diff too[l]' })
 vim.keymap.set('n', '<leader>ci', '<cmd>AnsiEsc<Cr>', { desc = 'Ans[i] escape' })
-vim.keymap.set('n', '<leader>v', '<cmd>DiffviewOpen<Cr>', { desc = 'diff' })
+
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'Toggle Comment', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'Toggle comment', remap = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'Save' })
