@@ -58,6 +58,7 @@ return {
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[g]rep' })
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[d]iagnostics' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[r]esume' })
+    vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[m]arks' })
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'recent ("[.]" for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] existing buffers' })
     -- Slightly advanced example of overriding default behavior and theme
@@ -81,6 +82,6 @@ return {
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set('n', '<leader>fn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
-    end, { desc = 'find [n]eovim files' })
+    end, { desc = '[n]eovim files' })
   end,
 }
