@@ -122,15 +122,6 @@
       enableZshIntegration = true;
     };
 
-    nnn = {
-      enable = true;
-      bookmarks = {
-        r = "~/Repos/";
-        e = "~/Repos/eiger/";
-        m = "~/.config/home-manager/";
-      };
-    };
-
     neovim = {
       viAlias = true;
       enable = true;
