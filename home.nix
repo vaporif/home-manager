@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, alacritty-themes-package, kitty-everforest-theme,  lfcd-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -161,10 +161,6 @@
     sha256 = "12cwy6kfa2wj7nzffaxn5bka21yjqa5sx38nzdhyg1dq0c6jnjkk";
   };
   xdg.configFile.".alacritty-colorscheme/" = {
-    source = "${alacritty-themes-package}";
-    recursive = true;
-  };
-  xdg.configFile."kitty" = {
     source = "${alacritty-themes-package}";
     recursive = true;
   };

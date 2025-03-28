@@ -21,13 +21,9 @@
       url = "github:alacritty/alacritty-theme";
       flake = false;
     };
-    kitty-everforest-theme = {
-      url = "https://github.com/ewal/kitty-everforest";
-      flake = false;
-    };
   };
 
-  outputs = { nixpkgs, home-manager, fzf-git-sh, lfcd-sh, alacritty-themes-package, kitty-everforest-theme, ... }:
+  outputs = { nixpkgs, home-manager, fzf-git-sh, lfcd-sh, alacritty-themes-package, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
@@ -60,7 +56,7 @@
             }
           ];
           extraSpecialArgs = {
-            inherit fzf-git-sh-package lfcd-sh-package alacritty-themes-package kitty-everforest-theme;
+            inherit fzf-git-sh-package lfcd-sh-package alacritty-themes-package;
           };
         };
     };
