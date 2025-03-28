@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, alacritty-themes-package, lfcd-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, alacritty-themes-package, kitty-everforest-theme,  lfcd-sh-package, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -39,9 +39,10 @@
     kitty = {
       enable = true;
       font = {
-        name ="Hack Nerd Font Mono";
+        name = "Hack Nerd Font Mono";
         size = 14;
       };
+      themeFile = "everforest_dark_soft";
       settings = {
         scrollback_lines = 20000;
         enable_audio_bell = false;
@@ -160,6 +161,10 @@
     sha256 = "12cwy6kfa2wj7nzffaxn5bka21yjqa5sx38nzdhyg1dq0c6jnjkk";
   };
   xdg.configFile.".alacritty-colorscheme/" = {
+    source = "${alacritty-themes-package}";
+    recursive = true;
+  };
+  xdg.configFile."kitty" = {
     source = "${alacritty-themes-package}";
     recursive = true;
   };

@@ -48,6 +48,18 @@
         "type": "github"
       }
     },
+    "kitty-everforest-theme": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-ueyTAY50OiJY4x21AT+Bg6pfQrcrXzkjfwiAPEpjqLA=",
+        "type": "file",
+        "url": "https://github.com/ewal/kitty-everforest"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/ewal/kitty-everforest"
+      }
+    },
     "lfcd-sh": {
       "flake": false,
       "locked": {
@@ -81,6 +93,7 @@
         "alacritty-themes-package": "alacritty-themes-package",
         "fzf-git-sh": "fzf-git-sh",
         "home-manager": "home-manager",
+        "kitty-everforest-theme": "kitty-everforest-theme",
         "lfcd-sh": "lfcd-sh",
         "nixpkgs": "nixpkgs"
       }
