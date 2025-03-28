@@ -12,7 +12,7 @@ vim.keymap.set('n', '<leader>cl', '<cmd>DiffviewOpen<Cr>', { desc = 'diff too[l]
 vim.keymap.set('n', '<leader>ci', '<cmd>AnsiEsc<Cr>', { desc = 'ans[i] escape' })
 vim.keymap.set('n', '<leader>ck', vim.diagnostic.setloclist, { desc = 'quic[k]fix list' })
 
-vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle Comment', remap = true })
+vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'write' })
 
@@ -28,7 +28,6 @@ vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', { noremap = true, desc = 'c
 vim.keymap.set('n', '<leader>st', '<C-w>w', { noremap = true, desc = '[t]oggle' })
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, desc = '[v]ertically' })
 vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, desc = '[l]orizontally' })
-vim.keymap.set('n', '<leader>l', '<C-w>w', { noremap = true, desc = 'buffer togg[l]e' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>m', ':SearchAndSub<CR>', { noremap = true, silent = true, desc = '[m]ulti replace' })
 vim.keymap.set('n', '<leader>co', function()
@@ -38,6 +37,8 @@ vim.keymap.set('n', '<leader>co', function()
 
   vim.cmd 'LspStart'
 end, { desc = 'LSP st[o]p-start' })
+
+vim.keymap.set('n', 'n', '<C-w>w', {})
 
 -- subversive
 vim.keymap.set('n', 's', '<Plug>(SubversiveSubstitute)', {})

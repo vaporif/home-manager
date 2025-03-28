@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
-brew "libusb"
-brew "openssl@3"
+brew "kitty"
 cask "alacritty"
 cask "karabiner-elements"
