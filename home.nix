@@ -36,6 +36,23 @@
       extraConfig = builtins.readFile ./lfrc;
     };
 
+    kitty = {
+      enable = true;
+      font = {
+        name = "Hack Nerd Font Mono";
+        size = 14;
+      };
+      themeFile = "everforest_dark_soft";
+      settings = {
+        scrollback_lines = 20000;
+        enable_audio_bell = false;
+        cursor_trail = 2;
+        confirm_os_window_close = 0;
+        cursor_trail_start_threshold = 4;
+        cursor_trail_decay = "0.05 0.2";
+      };
+    };
+
     direnv = {
       enable = true;
       enableZshIntegration = true;
