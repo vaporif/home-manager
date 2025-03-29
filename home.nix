@@ -155,4 +155,5 @@
     source = "${alacritty-themes-package}";
     recursive = true;
   };
+  xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./zellij/config.kdl}";
 }

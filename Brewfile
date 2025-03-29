@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 brew "kitty"
-cask "alacritty"
 cask "karabiner-elements"
