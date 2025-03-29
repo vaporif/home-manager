@@ -15,7 +15,7 @@ I'm using MacOs. This config could be easily migrated to anything nix supports.
 brew bundle
 ```
 
-It's used only for karabiner and alacritty as nix installation for them is either complicated/brittle.
+It's used only for karabiner and kitty as nix installation for them is either complicated/brittle.
 
 4. Install [nix](https://nixos.org/download) with [flakes](https://github.com/mschwaig/howto-install-nix-with-flake-support)
 
