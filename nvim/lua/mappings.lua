@@ -38,8 +38,6 @@ vim.keymap.set('n', '<leader>co', function()
   vim.cmd 'LspStart'
 end, { desc = 'LSP st[o]p-start' })
 
-vim.keymap.set('n', 'n', '<C-w>w', {})
-
 -- subversive
 vim.keymap.set('n', 's', '<Plug>(SubversiveSubstitute)', {})
 vim.keymap.set('n', 'ss', '<Plug>(SubversiveSubstituteLine)', {})
