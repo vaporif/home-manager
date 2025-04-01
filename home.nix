@@ -86,7 +86,7 @@
         theme = "robbyrussell";
       };
       initExtra = ''
-        # ${builtins.readFile ./.zshrc}
+        export PATH="/opt/homebrew/bin:$PATH"
         ulimit -Sn 4096
         ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
