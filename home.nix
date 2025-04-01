@@ -13,6 +13,10 @@
     lua-language-server
   ];
 
+  home.sessionVariables = {
+    PATH = "/opt/homebrew/bin:$PATH";
+  };
+
   programs = {
     ripgrep.enable = true;
     fd.enable = true;
@@ -66,6 +70,10 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+        ghc = "gh pr create -a @me";
+        ghh="gh pr checks";
+        ghm="gh pr merge -d";
+        ghl="gh pr list";
         t = "lfcd";
         lf = "lfcd";
         lg = "lazygit";
@@ -78,7 +86,9 @@
         theme = "robbyrussell";
       };
       initExtra = ''
-        ${builtins.readFile ./.zshrc}
+        # ${builtins.readFile ./.zshrc}
+        ulimit -Sn 4096
+        ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
         source ${lfcd-sh-package}/bin/lfcd.sh
       '';
