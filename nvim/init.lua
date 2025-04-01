@@ -111,6 +111,7 @@ require('lazy').setup({
   require 'plugins.theme',
   require 'plugins.marksnvim',
   require 'plugins.snipe',
+  require 'plugins.harpoon',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

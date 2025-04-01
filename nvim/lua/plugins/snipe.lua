@@ -2,7 +2,7 @@ return {
   'leath-dub/snipe.nvim',
   keys = {
     {
-      '<leade>i',
+      '<leader>i',
       function()
         require('snipe').open_buffer_menu()
       end,
@@ -13,7 +13,7 @@ return {
     local snipe = require 'snipe'
     snipe.setup {
       hints = {
-        dictionary = 'asfghlwertyuiop',
+        dictionary = 'nueihkjyo',
       },
       navigate = {
         -- In case you changed your mind, provide a keybind that lets you
