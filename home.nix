@@ -71,9 +71,8 @@
       syntaxHighlighting.enable = true;
       shellAliases = {
         ghc = "gh pr create -a @me";
-        ghh="gh pr checks";
-        ghm="gh pr merge -d";
-        ghl="gh pr list";
+        ghm = "gh pr merge -d";
+        ghl = "gh pr list";
         t = "lfcd";
         lf = "lfcd";
         lg = "lazygit";
