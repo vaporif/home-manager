@@ -64,6 +64,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     })
   end,
 })
+
 require 'mappings'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
