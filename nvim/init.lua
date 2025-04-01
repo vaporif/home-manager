@@ -110,7 +110,7 @@ require('lazy').setup({
   require 'plugins.cursorword',
   require 'plugins.theme',
   require 'plugins.marksnvim',
-  require 'plugins.harpoon',
+  require 'plugins.snipe',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
