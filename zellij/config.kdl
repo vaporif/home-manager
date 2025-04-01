@@ -24,7 +24,7 @@ keybinds {
         bind "Down" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "Right" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+        bind "n" { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "i" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "u" { MoveFocus "Up"; SwitchToMode "Normal"; } 
         bind "e" { MoveFocus "Down"; SwitchToMode "Normal"; }
