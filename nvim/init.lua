@@ -19,7 +19,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.g.no_cecutil_maps = 1
-
+vim.opt.swapfile = false
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
 vim.lsp.inlay_hint.enable()
