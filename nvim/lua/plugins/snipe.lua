@@ -6,7 +6,7 @@ return {
       function()
         require('snipe').open_buffer_menu()
       end,
-      desc = 'Sn[i]pe',
+      desc = 'rn[i]pe',
     },
   },
   config = function()
