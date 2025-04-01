@@ -5,4 +5,4 @@ ulimit -Sl unlimited # Increase max locked memory.
 
 alias ghc="gh pr create"
 alias ghl="gh pr list"
-alias ghm="gh pr merge"
+alias ghm="gh pr merge -d"
