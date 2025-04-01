@@ -48,7 +48,6 @@ return {
       { '<leader>g', group = '[g]it' },
       { '<leader>f', group = '[f]ind' },
       { '<leader>c', group = '[c]ode' },
-      { '<leader>d', group = '[d]ocument' },
       { '<leader>r', group = '[r]ename' },
       { '<leader>w', group = '[w]rite' },
       { '<leader>t', group = '[t]oggle' },
