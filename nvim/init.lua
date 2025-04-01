@@ -64,6 +64,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     })
   end,
 })
+
 require 'mappings'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -109,6 +110,8 @@ require('lazy').setup({
   require 'plugins.cursorword',
   require 'plugins.theme',
   require 'plugins.marksnvim',
+  require 'plugins.snipe',
+  require 'plugins.harpoon',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

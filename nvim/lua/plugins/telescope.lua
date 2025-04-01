@@ -60,7 +60,7 @@ return {
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[r]esume' })
     vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[m]arks' })
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'recent ("[.]" for repeat)' })
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] existing buffers' })
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[b]uffers' })
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>.', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
