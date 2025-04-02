@@ -27,7 +27,7 @@ vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { noremap = true, desc = '[d]e
 vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', { noremap = true, desc = 'cl[o]se except current' })
 vim.keymap.set('n', '<leader><Tab>', '<C-w>w', { noremap = true, desc = 'tab buffers' })
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, desc = '[v]ertically' })
-vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, desc = '[l]orizontally' })
+vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, desc = '[h]orizontally' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>m', ':SearchAndSub<CR>', { noremap = true, silent = true, desc = '[m]ulti replace' })
 vim.keymap.set('n', '<leader>co', function()
