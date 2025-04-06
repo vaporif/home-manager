@@ -26,15 +26,6 @@
     yazi = {
       enable = true;
       enableZshIntegration = true;
-      keymap = {
-        manager.prepend_keymap = [
-          { 
-            run = "plugin yamb save"; 
-            on = [ "u" "a" ]; 
-            desc = "Add bookmark";
-          }
-        ];
-      };
     };
     lf = {
       enable = true;
@@ -167,8 +158,12 @@
   };
 
   xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
+  xdg.configFile."yazi/keymap.toml".text = "${builtins.readFile ./yazi/keymap.toml}";
 
-  home.file.".config/yazi/plugins/yamb.yazi/".source = yamb-yazi;
+  home.file.".config/yazi/plugins/yamb.yazi/" = {
+    source = yamb-yazi;
+    recursive = true;
+  };
 
   home.file.".envrc".text = ''
     use flake github:vaporif/devshell

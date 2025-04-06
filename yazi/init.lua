@@ -17,4 +17,5 @@ require('yamb'):setup {
   cli = 'fzf',
   -- Optional, a string used for randomly generating keys, where the preceding characters have higher priority.
   keys = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  path = home_path .. '/.config/home-manager/yazi/bookmark',
 }

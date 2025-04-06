@@ -20,7 +20,7 @@
 
 
     yamb-yazi = {
-      url = "https://github.com/h-hg/yamb.yazi";
+      url = "github:h-hg/yamb.yazi";
       flake = false;
     };
   };
