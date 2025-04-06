@@ -33,7 +33,7 @@ return {
         --  the definition of its *type*, not where it was *defined*.
         map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'type [D]efinition')
         map('<leader>fD', require('telescope.builtin').lsp_document_symbols, '[D]ocument symbols')
-        map('<leader>fW', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace symbols')
+        map('<leader>fw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[w]orkspace symbols')
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
