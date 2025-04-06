@@ -61,7 +61,7 @@
         ghc = "gh pr create -a @me";
         ghm = "gh pr merge -d";
         ghl = "gh pr list";
-        t = "yazi";
+        t = "yy";
         lg = "lazygit";
         ls = "eza -a";
         cat = "bat";
