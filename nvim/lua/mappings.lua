@@ -30,13 +30,7 @@ vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, desc = '[v]er
 vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, desc = '[l]orizontally' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>m', ':SearchAndSub<CR>', { noremap = true, silent = true, desc = '[m]ulti replace' })
-vim.keymap.set('n', '<leader>co', function()
-  for _, client in pairs(vim.lsp.get_clients()) do
-    vim.lsp.stop_client(client.id)
-  end
-
-  vim.cmd 'LspStart'
-end, { desc = 'LSP st[o]p-start' })
+vim.keymap.set('n', '<leader>co', '<cmd>RainbowToggle<CR>', { desc = 'rainb[o]w toggle' })
 
 -- subversive
 vim.keymap.set('n', 's', '<Plug>(SubversiveSubstitute)', {})

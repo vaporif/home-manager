@@ -32,6 +32,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_user_command('RainbowToggle', function()
+  local rainbow = require 'rainbow-delimiters'
+  if rainbow.is_enabled() then
+    rainbow.disable()
+    print 'Rainbow delimiters disabled'
+  else
+    rainbow.enable()
+    print 'Rainbow delimiters enabled'
+  end
+end, {})
 vim.api.nvim_create_user_command('SearchAndSub', function()
   -- Use * to search for the word under cursor
   vim.cmd 'normal! *'
@@ -95,6 +105,7 @@ require('lazy').setup({
   require 'plugins.crates',
   require 'plugins.conform',
   require 'plugins.lualine',
+  require 'plugins.rainbow',
   'mg979/vim-visual-multi',
   require 'plugins.mini',
   { 'svermeulen/vim-subversive' },
