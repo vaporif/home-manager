@@ -24,20 +24,6 @@
     lazygit.enable = true;
     bat = {
       enable = true;
-      themes = {
-        everforest = {
-          src = pkgs.fetchFromGitHub {
-            owner = "neuromaancer";
-            repo = "everforest_collection";
-            rev = "main";
-            sha256 = "sha256-r+XlFuc0x5lVJy3qDHgxlvpZzaMccYDbLtA0ss2DAWs=";
-          };
-          file = "bat/everforest-soft.tmTheme";
-        };
-      };
-      config = {
-        theme = "everforest";
-      };
     };
     yazi = {
       enable = true;
