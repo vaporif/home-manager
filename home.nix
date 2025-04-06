@@ -21,8 +21,24 @@
     ripgrep.enable = true;
     fd.enable = true;
     gh.enable = true;
-    bat.enable = true;
     lazygit.enable = true;
+    bat = {
+      enable = true;
+      themes = {
+        everforest = {
+          src = pkgs.fetchFromGitHub {
+            owner = "neuromaancer";
+            repo = "everforest_collection";
+            rev = "main";
+            sha256 = "sha256-r+XlFuc0x5lVJy3qDHgxlvpZzaMccYDbLtA0ss2DAWs=";
+          };
+          file = "bat/everforest-soft.tmTheme";
+        };
+      };
+      config = {
+        theme = "everforest";
+      };
+    };
     yazi = {
       enable = true;
       enableZshIntegration = true;
@@ -152,9 +168,9 @@
   '';
 
   xdg.configFile.nvim.source = ./nvim;
-  xdg.configFile."lf/icons".source = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example";
-    sha256 = "12cwy6kfa2wj7nzffaxn5bka21yjqa5sx38nzdhyg1dq0c6jnjkk";
-  };
   xdg.configFile."zellij/config.kdl".text = "${builtins.readFile ./zellij/config.kdl}";
+
+  xdg.configFile."bat/config".text = ''
+    --style="plain"
+  '';
 }
