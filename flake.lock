@@ -65,7 +65,20 @@
         "fzf-git-sh": "fzf-git-sh",
         "home-manager": "home-manager",
         "lfcd-sh": "lfcd-sh",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "yamb-yazi": "yamb-yazi"
+      }
+    },
+    "yamb-yazi": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-3EfAOsI5l47sJ0XyW8I5qMDXZFU2ngMSYHpmn2lwYwA=",
+        "type": "file",
+        "url": "https://github.com/h-hg/yamb.yazi"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/h-hg/yamb.yazi"
       }
     }
   },

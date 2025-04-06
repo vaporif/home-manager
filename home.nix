@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, lfcd-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, lfcd-sh-package, yamb-yazi, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -23,6 +23,19 @@
     gh.enable = true;
     bat.enable = true;
     lazygit.enable = true;
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+      keymap = {
+        manager.prepend_keymap = [
+          { 
+            run = "plugin yamb save"; 
+            on = [ "u" "a" ]; 
+            desc = "Add bookmark";
+          }
+        ];
+      };
+    };
     lf = {
       enable = true;
 
@@ -73,7 +86,8 @@
         ghc = "gh pr create -a @me";
         ghm = "gh pr merge -d";
         ghl = "gh pr list";
-        t = "lfcd";
+        # t = "lfcd";
+        t = "yazi";
         lf = "lfcd";
         lg = "lazygit";
         ls = "eza -a";
@@ -151,6 +165,11 @@
       enableZshIntegration = true;
     };
   };
+
+  xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
+
+  home.file.".config/yazi/plugins/yamb.yazi/".source = yamb-yazi;
+
   home.file.".envrc".text = ''
     use flake github:vaporif/devshell
   '';

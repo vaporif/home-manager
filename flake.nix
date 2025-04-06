@@ -17,9 +17,15 @@
       url = "https://raw.githubusercontent.com/junegunn/fzf-git.sh/28b544a7b6d284b8e46e227b36000089b45e9e00/fzf-git.sh";
       flake = false;
     };
+
+
+    yamb-yazi = {
+      url = "https://github.com/h-hg/yamb.yazi";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, fzf-git-sh, lfcd-sh, ... }:
+  outputs = { nixpkgs, home-manager, fzf-git-sh, lfcd-sh, yamb-yazi, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
@@ -48,7 +54,7 @@
             }
           ];
           extraSpecialArgs = {
-            inherit fzf-git-sh-package lfcd-sh-package;
+            inherit fzf-git-sh-package lfcd-sh-package yamb-yazi;
           };
         };
     };
