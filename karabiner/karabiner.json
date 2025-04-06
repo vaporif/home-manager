@@ -251,13 +251,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "p",
-                                        "modifiers": ["left_shift"]
+                                        "key_code": "escape",
+                                        "modifiers": []
                                     },
-                                    {
-                                        "key_code": "p",
-                                        "modifiers": ["left_shift"]
-                                    }
                                 ],
                                 "type": "basic"
                             },
