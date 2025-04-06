@@ -53,12 +53,10 @@ return {
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[k]eymaps' })
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]iles' })
     vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[s]elect telescope' })
-    vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'current [w]ord' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[g]rep' })
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[d]iagnostics' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[r]esume' })
     vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[m]arks' })
-    vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'recent ("[.]" for repeat)' })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[b]uffers' })
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>.', function()
