@@ -22,8 +22,6 @@ return {
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
         map('gd', require('telescope.builtin').lsp_definitions, 'goto [d]efinition')
-
-        -- Find references for the word under your cursor.
         map('gr', require('telescope.builtin').lsp_references, 'goto [r]eferences')
 
         -- Jump to the implementation of the word under your cursor.
@@ -34,14 +32,8 @@ return {
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
         map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'type [D]efinition')
-
-        -- Fuzzy find all the symbols in your current document.
-        --  Symbols are things like variables, functions, types, etc.
         map('<leader>fD', require('telescope.builtin').lsp_document_symbols, '[D]ocument symbols')
-
-        -- Fuzzy find all the symbols in your current workspace.
-        --  Similar to document symbols, except searches over your entire project.
-        map('<leader>fW', require('telescope.builtin').lsp_workspace_symbols, '[W]orkspace symbols')
+        map('<leader>fW', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace symbols')
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
