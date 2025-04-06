@@ -8,11 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lfcd-sh = {
-      url = "https://raw.githubusercontent.com/gokcehan/lf/8bfa3a6d347cad3940d224d14181f58bbf39811e/etc/lfcd.sh";
-      flake = false;
-    };
-
     fzf-git-sh = {
       url = "https://raw.githubusercontent.com/junegunn/fzf-git.sh/28b544a7b6d284b8e46e227b36000089b45e9e00/fzf-git.sh";
       flake = false;
@@ -24,12 +19,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, fzf-git-sh, lfcd-sh, yamb-yazi, ... }:
+  outputs = { nixpkgs, home-manager, fzf-git-sh, yamb-yazi, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
       fzf-git-sh-package = pkgs.writeShellScriptBin "fzf-git.sh" (builtins.readFile fzf-git-sh);
-      lfcd-sh-package = pkgs.writeShellScriptBin "lfcd.sh" (builtins.readFile lfcd-sh);
     in
     {
       homeConfigurations.vaporif =
@@ -53,7 +47,7 @@
             }
           ];
           extraSpecialArgs = {
-            inherit fzf-git-sh-package lfcd-sh-package yamb-yazi;
+            inherit fzf-git-sh-package yamb-yazi;
           };
         };
     };

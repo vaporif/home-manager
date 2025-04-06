@@ -32,18 +32,6 @@
         "type": "github"
       }
     },
-    "lfcd-sh": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-QB9OjYdGfEpiPWQ2OUWSAYjcg4PXLRhKkubAsQGc57A=",
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/gokcehan/lf/8bfa3a6d347cad3940d224d14181f58bbf39811e/etc/lfcd.sh"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/gokcehan/lf/8bfa3a6d347cad3940d224d14181f58bbf39811e/etc/lfcd.sh"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1743827369,
@@ -64,7 +52,6 @@
       "inputs": {
         "fzf-git-sh": "fzf-git-sh",
         "home-manager": "home-manager",
-        "lfcd-sh": "lfcd-sh",
         "nixpkgs": "nixpkgs",
         "yamb-yazi": "yamb-yazi"
       }

@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, lfcd-sh-package, yamb-yazi, ... }: {
+{ pkgs, fzf-git-sh-package, yamb-yazi, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
