@@ -18,7 +18,6 @@
       flake = false;
     };
 
-
     yamb-yazi = {
       url = "github:h-hg/yamb.yazi";
       flake = false;
