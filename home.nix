@@ -159,6 +159,10 @@
 
   xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
   xdg.configFile."yazi/keymap.toml".text = "${builtins.readFile ./yazi/keymap.toml}";
+  xdg.configFile."yazi/theme.toml".source = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/Chromium-3-Oxide/everforest-medium.yazi/refs/heads/main/flavor.toml";
+    sha256 = "sha256:0hwwn635m0lplvwy953c4vqa9aag0avahgvwj62xvpf93205l5y7";
+  };
 
   home.file.".config/yazi/plugins/yamb.yazi/" = {
     source = yamb-yazi;
