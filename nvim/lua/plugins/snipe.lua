@@ -12,9 +12,6 @@ return {
   config = function()
     local snipe = require 'snipe'
     snipe.setup {
-      hints = {
-        dictionary = 'nueihkjyo',
-      },
       navigate = {
         -- In case you changed your mind, provide a keybind that lets you
         -- cancel the snipe and close the window.

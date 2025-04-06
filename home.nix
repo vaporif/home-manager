@@ -1,4 +1,4 @@
-{ pkgs, fzf-git-sh-package, lfcd-sh-package, ... }: {
+{ pkgs, fzf-git-sh-package, yamb-yazi, ... }: {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -23,21 +23,9 @@
     gh.enable = true;
     bat.enable = true;
     lazygit.enable = true;
-    lf = {
+    yazi = {
       enable = true;
-
-      keybindings = {
-        "." = "set hidden!";
-        e = "$$EDITOR $f";
-        "f" = null;
-        br = "cd ~/Repos/";
-        be = "cd ~/Repos/eiger/";
-        bm = "cd ~/.config/home-manager/";
-        bw = "cd ~/Repos/giza-axelar-starknet/";
-      };
-
-      # NOTE: escaping scripts is not cool so just readFile
-      extraConfig = builtins.readFile ./lfrc;
+      enableZshIntegration = true;
     };
 
     kitty = {
@@ -73,8 +61,7 @@
         ghc = "gh pr create -a @me";
         ghm = "gh pr merge -d";
         ghl = "gh pr list";
-        t = "lfcd";
-        lf = "lfcd";
+        t = "yy";
         lg = "lazygit";
         ls = "eza -a";
         cat = "bat";
@@ -89,7 +76,6 @@
         ulimit -Sn 4096
         ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
-        source ${lfcd-sh-package}/bin/lfcd.sh
       '';
     };
 
@@ -151,6 +137,16 @@
       enableZshIntegration = true;
     };
   };
+
+  xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
+  xdg.configFile."yazi/keymap.toml".text = "${builtins.readFile ./yazi/keymap.toml}";
+  xdg.configFile."yazi/theme.toml".text = "${builtins.readFile ./yazi/theme.toml}";
+
+  home.file.".config/yazi/plugins/yamb.yazi/" = {
+    source = yamb-yazi;
+    recursive = true;
+  };
+
   home.file.".envrc".text = ''
     use flake github:vaporif/devshell
   '';
