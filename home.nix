@@ -143,10 +143,7 @@
 
   xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
   xdg.configFile."yazi/keymap.toml".text = "${builtins.readFile ./yazi/keymap.toml}";
-  xdg.configFile."yazi/theme.toml".source = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/neuromaancer/everforest_collection/refs/heads/main/yazi/theme.toml";
-    sha256 = "sha256:1v1ay8xk6rf6fq6l7rjhqlsskdn7czjbq3lnqwpx4pba0pjaihzj";
-  };
+  xdg.configFile."yazi/theme.toml".text = "${builtins.readFile ./yazi/theme.toml}";
 
   home.file.".config/yazi/plugins/yamb.yazi/" = {
     source = yamb-yazi;
