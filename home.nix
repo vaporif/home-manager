@@ -27,22 +27,6 @@
       enable = true;
       enableZshIntegration = true;
     };
-    lf = {
-      enable = true;
-
-      keybindings = {
-        "." = "set hidden!";
-        e = "$$EDITOR $f";
-        "f" = null;
-        br = "cd ~/Repos/";
-        be = "cd ~/Repos/eiger/";
-        bm = "cd ~/.config/home-manager/";
-        bw = "cd ~/Repos/giza-axelar-starknet/";
-      };
-
-      # NOTE: escaping scripts is not cool so just readFile
-      extraConfig = builtins.readFile ./lfrc;
-    };
 
     kitty = {
       enable = true;
