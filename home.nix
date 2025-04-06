@@ -62,7 +62,6 @@
         ghm = "gh pr merge -d";
         ghl = "gh pr list";
         t = "yazi";
-        lf = "lfcd";
         lg = "lazygit";
         ls = "eza -a";
         cat = "bat";
@@ -77,7 +76,6 @@
         ulimit -Sn 4096
         ulimit -Sl unlimited
         source ${fzf-git-sh-package}/bin/fzf-git.sh
-        source ${lfcd-sh-package}/bin/lfcd.sh
       '';
     };
 
