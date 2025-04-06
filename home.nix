@@ -61,7 +61,6 @@
         ghc = "gh pr create -a @me";
         ghm = "gh pr merge -d";
         ghl = "gh pr list";
-        # t = "lfcd";
         t = "yazi";
         lf = "lfcd";
         lg = "lazygit";
