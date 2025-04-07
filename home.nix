@@ -68,6 +68,7 @@
         lg = "lazygit";
         ls = "eza -a";
         cat = "bat";
+        e = "nvim";
       };
       oh-my-zsh = {
         enable = true;
