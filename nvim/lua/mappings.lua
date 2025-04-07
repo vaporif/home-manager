@@ -17,13 +17,13 @@ vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'toggle comment', remap = true 
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'toggle comment', remap = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w!<CR>', { desc = 'write' })
 
-vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree float toggle reveal_force_cwd<CR>', { desc = 'Tree toggl[e]' })
-vim.keymap.set('n', '<Leader>G', '<Cmd>Neotree float git_status toggle reveal<CR>', { desc = '[G]it status' })
+vim.keymap.set('n', '<Leader>e', '<Cmd>Neotree float toggle reveal_force_cwd<CR>', { desc = 'n[e]otree' })
+vim.keymap.set('n', '<Leader>E', '<Cmd>Neotree float git_status toggle reveal<CR>', { desc = 'n[E]otree git' })
 
 -- Buffers
 vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { noremap = true, desc = '[n]ext buffer' })
 vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { noremap = true, desc = '[p]revious buffer' })
-vim.keymap.set('n', '<leader>bb', '<C-^>', { noremap = true, desc = 'Toggle [b]uffer' })
+vim.keymap.set('n', '<leader>bb', '<C-^>', { noremap = true, desc = 'toggle [b]uffer' })
 vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { noremap = true, desc = '[d]elete current' })
 vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', { noremap = true, desc = 'cl[o]se except current' })
 vim.keymap.set('n', '<leader><Tab>', '<C-w>w', { noremap = true, desc = 'tab buffers' })

@@ -42,15 +42,15 @@ return {
     }
 
     require('which-key').add {
-      { '<leader>x', group = 'e[x]plain errors' },
       { '<leader>b', group = '[b]uffer' },
       { '<leader>s', group = '[s]plit' },
-      { '<leader>g', group = '[g]it' },
+      { '<leader>g', group = '[G]it signs' },
       { '<leader>f', group = '[f]ind' },
       { '<leader>c', group = '[c]ode' },
+      { '<leader>l', group = 'tog[l]le' },
       { '<leader>r', group = '[r]ename' },
       { '<leader>w', group = '[w]rite' },
-      { '<leader>t', group = '[t]oggle' },
+      { '<leader>t', group = '[t]rouble' },
       { '<leader>h', group = 'git [h]unk', mode = { 'n', 'v' } },
     }
   end,
