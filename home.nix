@@ -11,6 +11,7 @@
     hyperfine
     pango
     lua-language-server
+    stylua
   ];
 
   home.sessionVariables = {
