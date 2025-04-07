@@ -11,6 +11,8 @@
     hyperfine
     pango
     lua-language-server
+    stylua
+    vscode-extensions.vadimcn.vscode-lldb
   ];
 
   home.sessionVariables = {
