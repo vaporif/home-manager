@@ -8,8 +8,8 @@ return {
   -- working release
   -- https://github.com/Saghen/blink.cmp/releases
   -- version = "v0.13.1",
+  version = '^1',
   dependencies = {
-    'moyiz/blink-emoji.nvim',
     'Kaiser-Yang/blink-cmp-dictionary',
   },
   opts = function(_, opts)
@@ -31,13 +31,13 @@ return {
     -- Merge custom sources with the existing ones from lazyvim
     -- NOTE: by default lazyvim already includes the lazydev source, so not adding it here again
     opts.sources = vim.tbl_deep_extend('force', opts.sources or {}, {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'dictionary' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         lsp = {
           name = 'lsp',
           enabled = true,
           module = 'blink.cmp.sources.lsp',
-          kind = 'LSP',
+          -- kind = 'LSP',
           min_keyword_length = 2,
           -- When linking markdown notes, I would get snippets and text in the
           -- suggestions, I want those to show only if there are no LSP
@@ -99,28 +99,28 @@ return {
           -- friendly-snippets in the luasnip.lua file, but I was unable to do
           -- so, so I still have to use the transform_items here
           -- This removes the ";" only for the friendly-snippets snippets
-          transform_items = function(_, items)
-            local line = vim.api.nvim_get_current_line()
-            local col = vim.api.nvim_win_get_cursor(0)[2]
-            local before_cursor = line:sub(1, col)
-            local start_pos, end_pos = before_cursor:find(trigger_text .. '[^' .. trigger_text .. ']*$')
-            if start_pos then
-              for _, item in ipairs(items) do
-                if not item.trigger_text_modified then
-                  ---@diagnostic disable-next-line: inject-field
-                  item.trigger_text_modified = true
-                  item.textEdit = {
-                    newText = item.insertText or item.label,
-                    range = {
-                      start = { line = vim.fn.line '.' - 1, character = start_pos - 1 },
-                      ['end'] = { line = vim.fn.line '.' - 1, character = end_pos },
-                    },
-                  }
-                end
-              end
-            end
-            return items
-          end,
+          -- transform_items = function(_, items)
+          --   local line = vim.api.nvim_get_current_line()
+          --   local col = vim.api.nvim_win_get_cursor(0)[2]
+          --   local before_cursor = line:sub(1, col)
+          --   local start_pos, end_pos = before_cursor:find(trigger_text .. '[^' .. trigger_text .. ']*$')
+          --   if start_pos then
+          --     for _, item in ipairs(items) do
+          --       if not item.trigger_text_modified then
+          --         ---@diagnostic disable-next-line: inject-field
+          --         item.trigger_text_modified = true
+          --         item.textEdit = {
+          --           newText = item.insertText or item.label,
+          --           range = {
+          --             start = { line = vim.fn.line '.' - 1, character = start_pos - 1 },
+          --             ['end'] = { line = vim.fn.line '.' - 1, character = end_pos },
+          --           },
+          --         }
+          --       end
+          --     end
+          --   end
+          --   return items
+          -- end,
         },
         -- https://github.com/Kaiser-Yang/blink-cmp-dictionary
         -- In macOS to get started with a dictionary:
@@ -198,6 +198,7 @@ return {
       },
     }
 
+    opts.fuzzy = { implementation = 'rust' }
     -- opts.fuzzy = {
     --   -- Disabling this matches the behavior of fzf
     --   use_typo_resistance = false,
@@ -207,9 +208,9 @@ return {
     --   use_proximity = false,
     -- }
 
-    opts.snippets = {
-      preset = 'luasnip', -- Choose LuaSnip as the snippet engine
-    }
+    -- opts.snippets = {
+    --   preset = 'luasnip', -- Choose LuaSnip as the snippet engine
+    -- }
 
     -- -- To specify the options for snippets
     -- opts.sources.providers.snippets.opts = {
@@ -223,9 +224,10 @@ return {
     -- the completion will be accepted
     -- https://cmp.saghen.dev/configuration/keymap.html#default
     opts.keymap = {
-      preset = 'default',
+      preset = 'enter',
       ['<Tab>'] = { 'snippet_forward', 'fallback' },
       ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      ['<C-y>'] = { 'select_and_accept' },
 
       ['<Up>'] = { 'select_prev', 'fallback' },
       ['<Down>'] = { 'select_next', 'fallback' },
