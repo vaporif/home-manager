@@ -90,7 +90,7 @@ require('lazy').setup({
   require 'plugins.dashboard',
   require 'plugins.snacks',
   require 'plugins.lsp',
-  require 'plugins.cmp',
+  require 'plugins.blink-cmp',
   require 'plugins.rustacean',
   require 'plugins.crates',
   require 'plugins.conform',
