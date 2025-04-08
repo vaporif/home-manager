@@ -1,5 +1,6 @@
-{ pkgs, fzf-git-sh-package, yamb-yazi, ... }: {
+{ pkgs, fzf-git-sh-package, yamb-yazi, blink-cmp-words, ... }: {
   programs.home-manager.enable = true;
+
 
   home.packages = with pkgs; [
     nerd-fonts.hack
@@ -147,6 +148,8 @@
       enableZshIntegration = true;
     };
   };
+
+  home.file.".local/share/blink-cmp-dict/words.txt".source = "${blink-cmp-words}/words.txt";
   xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
   xdg.configFile."yazi/keymap.toml".text = "${builtins.readFile ./yazi/keymap.toml}";
   xdg.configFile."yazi/theme.toml".text = "${builtins.readFile ./yazi/theme.toml}";
