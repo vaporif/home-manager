@@ -17,7 +17,7 @@
       url = "github:h-hg/yamb.yazi";
       flake = false;
     };
-    
+
     blink-cmp-words = {
       url = "github:dwyl/english-words";
       flake = false;

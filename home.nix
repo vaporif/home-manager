@@ -1,6 +1,7 @@
 { pkgs, fzf-git-sh-package, yamb-yazi, blink-cmp-words, ... }: {
   programs.home-manager.enable = true;
 
+
   home.packages = with pkgs; [
     nerd-fonts.hack
     coreutils
