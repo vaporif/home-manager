@@ -4,10 +4,6 @@ local trigger_text = ';'
 return {
   'saghen/blink.cmp',
   enabled = true,
-  -- In case there are breaking changes and you want to go back to the last
-  -- working release
-  -- https://github.com/Saghen/blink.cmp/releases
-  -- version = "v0.13.1",
   version = '1.1.1',
   dependencies = {
     'Kaiser-Yang/blink-cmp-dictionary',
@@ -27,18 +23,9 @@ return {
       return true
     end
 
-    -- set wordnet path for dictionary
-    local dict_path = ''
-    if not vim.env.WORDNET_PATH then
-      vim.notify('Warning: WORDNET_PATH environment variable is not set, using default path', vim.log.levels.WARN)
-    else
-      dict_path = vim.fs.joinpath(vim.env.WORDNET_PATH, '/dict/')
-    end
-
     -- NOTE: The new way to enable LuaSnip
     -- Merge custom sources with the existing ones from lazyvim
     -- NOTE: by default lazyvim already includes the lazydev source, so not adding it here again
-
     opts.sources = vim.tbl_deep_extend('force', opts.sources or {}, {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'dictionary' },
       providers = {
@@ -47,7 +34,7 @@ return {
           enabled = true,
           module = 'blink.cmp.sources.lsp',
           -- kind = 'LSP',
-          min_keyword_length = 2,
+          min_keyword_length = 1,
           -- When linking markdown notes, I would get snippets and text in the
           -- suggestions, I want those to show only if there are no LSP
           -- suggestions
@@ -152,19 +139,19 @@ return {
             --
             -- Do not specify a file, just the path, and in the path you need to
             -- have your .txt files
-            dictionary_directories = { vim.fn.expand '~/.config/wordnet/' },
+            dictionary_directories = { vim.fn.expand '~/.local/share/blink-cmp-dict/' },
             -- Notice I'm also adding the words I add to the spell dictionary
-            dictionary_files = {
-              vim.fs.joinpath(dict_path, 'adj.exc'),
-              vim.fs.joinpath(dict_path, 'adv.exc'),
-              vim.fs.joinpath(dict_path, 'noun.exc'),
-              vim.fs.joinpath(dict_path, 'verb.exc'),
-            },
+            -- dictionary_files = {
+            -- vim.fs.joinpath(dict_path, 'adj.exc'),
+            -- vim.fs.joinpath(dict_path, 'adv.exc'),
+            -- vim.fs.joinpath(dict_path, 'noun.exc'),
+            -- vim.fs.joinpath(dict_path, 'verb.exc'),
+            -- },
             -- --  NOTE: To disable the definitions uncomment this section below
             --
             -- separate_output = function(output)
             --   local items = {}
-            --   for line in output:gmatch("[^\r\n]+") do
+            --   for line in output:gmatch '[^\r\n]+' do
             --     table.insert(items, {
             --       label = line,
             --       insert_text = line,
@@ -229,11 +216,6 @@ return {
     --   show_autosnippets = true, -- Display autosnippets in the completion menu
     -- }
 
-    -- The default preset used by lazyvim accepts completions with enter
-    -- I don't like using enter because if on markdown and typing
-    -- something, but you want to go to the line below, if you press enter,
-    -- the completion will be accepted
-    -- https://cmp.saghen.dev/configuration/keymap.html#default
     opts.keymap = {
       preset = 'enter',
       ['<Tab>'] = { 'snippet_forward', 'fallback' },

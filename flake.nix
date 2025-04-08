@@ -17,9 +17,14 @@
       url = "github:h-hg/yamb.yazi";
       flake = false;
     };
+    
+    blink-cmp-words = {
+      url = "github:dwyl/english-words";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, fzf-git-sh, yamb-yazi, ... }:
+  outputs = { nixpkgs, home-manager, fzf-git-sh, yamb-yazi, blink-cmp-words, ... }:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs { inherit system; };
@@ -47,7 +52,7 @@
             }
           ];
           extraSpecialArgs = {
-            inherit fzf-git-sh-package yamb-yazi;
+            inherit fzf-git-sh-package yamb-yazi blink-cmp-words;
           };
         };
     };
