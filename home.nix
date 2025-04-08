@@ -10,10 +10,12 @@
     bottom
     hyperfine
     pango
+    wordnet
   ];
 
   home.sessionVariables = {
     PATH = "/opt/homebrew/bin:$PATH";
+    WORDNET_PATH = "${pkgs.wordnet}";
   };
 
   programs = {
@@ -145,7 +147,6 @@
       enableZshIntegration = true;
     };
   };
-
   xdg.configFile."yazi/init.lua".text = "${builtins.readFile ./yazi/init.lua}";
   xdg.configFile."yazi/keymap.toml".text = "${builtins.readFile ./yazi/keymap.toml}";
   xdg.configFile."yazi/theme.toml".text = "${builtins.readFile ./yazi/theme.toml}";
