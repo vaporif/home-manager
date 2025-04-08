@@ -22,10 +22,6 @@ return {
       end
       return true
     end
-
-    -- NOTE: The new way to enable LuaSnip
-    -- Merge custom sources with the existing ones from lazyvim
-    -- NOTE: by default lazyvim already includes the lazydev source, so not adding it here again
     opts.sources = vim.tbl_deep_extend('force', opts.sources or {}, {
       default = { 'lsp', 'path', 'snippets', 'buffer', 'dictionary' },
       providers = {
@@ -33,24 +29,12 @@ return {
           name = 'lsp',
           enabled = true,
           module = 'blink.cmp.sources.lsp',
-          -- kind = 'LSP',
-          -- When linking markdown notes, I would get snippets and text in the
-          -- suggestions, I want those to show only if there are no LSP
-          -- suggestions
-          --
-          -- Enabled fallbacks as this seems to be working now
-          -- Disabling fallbacks as my snippets wouldn't show up when editing
-          -- lua files
-          -- fallbacks = { "snippets", "buffer" },
           score_offset = 90, -- the higher the number, the higher the priority
         },
         path = {
           name = 'Path',
           module = 'blink.cmp.sources.path',
           score_offset = 25,
-          -- When typing a path, I would get snippets and text in the
-          -- suggestions, I want those to show only if there are no path
-          -- suggestions
           fallbacks = { 'snippets', 'buffer' },
           opts = {
             trailing_slash = false,
@@ -78,86 +62,16 @@ return {
           score_offset = 85, -- the higher the number, the higher the priority
           -- Only show snippets if I type the trigger_text characters, so
           -- to expand the "bash" snippet, if the trigger_text is ";" I have to
-          should_show_items = function()
-            local col = vim.api.nvim_win_get_cursor(0)[2]
-            local before_cursor = vim.api.nvim_get_current_line():sub(1, col)
-            -- NOTE: remember that `trigger_text` is modified at the top of the file
-            return before_cursor:match(trigger_text .. '%w*$') ~= nil
-          end,
-          -- After accepting the completion, delete the trigger_text characters
-          -- from the final inserted text
-          -- Modified transform_items function based on suggestion by `synic` so
-          -- that the luasnip source is not reloaded after each transformation
-          -- https://github.com/linkarzu/dotfiles-latest/discussions/7#discussion-7849902
-          -- NOTE: I also tried to add the ";" prefix to all of the snippets loaded from
-          -- friendly-snippets in the luasnip.lua file, but I was unable to do
-          -- so, so I still have to use the transform_items here
-          -- This removes the ";" only for the friendly-snippets snippets
-          -- transform_items = function(_, items)
-          --   local line = vim.api.nvim_get_current_line()
-          --   local col = vim.api.nvim_win_get_cursor(0)[2]
-          --   local before_cursor = line:sub(1, col)
-          --   local start_pos, end_pos = before_cursor:find(trigger_text .. '[^' .. trigger_text .. ']*$')
-          --   if start_pos then
-          --     for _, item in ipairs(items) do
-          --       if not item.trigger_text_modified then
-          --         ---@diagnostic disable-next-line: inject-field
-          --         item.trigger_text_modified = true
-          --         item.textEdit = {
-          --           newText = item.insertText or item.label,
-          --           range = {
-          --             start = { line = vim.fn.line '.' - 1, character = start_pos - 1 },
-          --             ['end'] = { line = vim.fn.line '.' - 1, character = end_pos },
-          --           },
-          --         }
-          --       end
-          --     end
-          --   end
-          --   return items
-          -- end,
         },
-        -- https://github.com/Kaiser-Yang/blink-cmp-dictionary
-        -- In macOS to get started with a dictionary:
-        -- cp /usr/share/dict/words ~/github/dotfiles-latest/dictionaries/words.txt
-        --
-        -- NOTE: For the word definitions make sure "wn" is installed
-        -- brew install wordnet
         dictionary = {
           module = 'blink-cmp-dictionary',
           name = 'Dict',
           score_offset = 20, -- the higher the number, the higher the priority
-          -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
           enabled = true,
           max_items = 8,
           min_keyword_length = 3,
           opts = {
-            -- -- The dictionary by default now uses fzf, make sure to have it
-            -- -- installed
-            -- -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
-            --
-            -- Do not specify a file, just the path, and in the path you need to
-            -- have your .txt files
             dictionary_directories = { vim.fn.expand '~/.local/share/blink-cmp-dict/' },
-            -- Notice I'm also adding the words I add to the spell dictionary
-            -- dictionary_files = {
-            -- vim.fs.joinpath(dict_path, 'adj.exc'),
-            -- vim.fs.joinpath(dict_path, 'adv.exc'),
-            -- vim.fs.joinpath(dict_path, 'noun.exc'),
-            -- vim.fs.joinpath(dict_path, 'verb.exc'),
-            -- },
-            -- --  NOTE: To disable the definitions uncomment this section below
-            --
-            -- separate_output = function(output)
-            --   local items = {}
-            --   for line in output:gmatch '[^\r\n]+' do
-            --     table.insert(items, {
-            --       label = line,
-            --       insert_text = line,
-            --       documentation = nil,
-            --     })
-            --   end
-            --   return items
-            -- end,
           },
         },
       },
