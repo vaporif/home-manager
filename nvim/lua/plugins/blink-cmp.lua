@@ -1,6 +1,3 @@
--- NOTE: Specify the trigger character(s) used for luasnip
-local trigger_text = ';'
-
 return {
   'saghen/blink.cmp',
   enabled = true,
@@ -52,6 +49,13 @@ return {
           module = 'blink.cmp.sources.buffer',
           min_keyword_length = 2,
           score_offset = 15, -- the higher the number, the higher the priority
+          opts = {
+            get_bufnrs = function()
+              return vim.tbl_filter(function(bufnr)
+                return vim.bo[bufnr].buftype == ''
+              end, vim.api.nvim_list_bufs())
+            end,
+          },
         },
         snippets = {
           name = 'snippets',
@@ -82,51 +86,25 @@ return {
     }
 
     opts.completion = {
-      -- accept = {
-      --   auto_brackets = {
-      --     enabled = true,
-      --     default_brackets = { ";", "" },
-      --     override_brackets_for_filetypes = {
-      --       markdown = { ";", "" },
-      --     },
-      --   },
-      -- },
-      --   keyword = {
-      --     -- 'prefix' will fuzzy match on the text before the cursor
-      --     -- 'full' will fuzzy match on the text before *and* after the cursor
-      --     -- example: 'foo_|_bar' will match 'foo_' for 'prefix' and 'foo__bar' for 'full'
-      --     range = "full",
-      --   },
+      ghost_text = { enabled = true },
       menu = {
-        border = 'single',
+        draw = {
+          padding = { 0, 1 }, -- padding only on right side
+          components = {
+            kind_icon = {
+              text = function(ctx)
+                return ' ' .. ctx.kind_icon .. ctx.icon_gap .. ' '
+              end,
+            },
+          },
+        },
       },
       documentation = {
         auto_show = true,
-        window = {
-          border = 'single',
-        },
       },
     }
 
     opts.fuzzy = { implementation = 'rust' }
-    -- opts.fuzzy = {
-    --   -- Disabling this matches the behavior of fzf
-    --   use_typo_resistance = false,
-    --   -- Frecency tracks the most recently/frequently used items and boosts the score of the item
-    --   use_frecency = true,
-    --   -- Proximity bonus boosts the score of items matching nearby words
-    --   use_proximity = false,
-    -- }
-
-    -- opts.snippets = {
-    --   preset = 'luasnip', -- Choose LuaSnip as the snippet engine
-    -- }
-
-    -- -- To specify the options for snippets
-    -- opts.sources.providers.snippets.opts = {
-    --   use_show_condition = true, -- Enable filtering of snippets dynamically
-    --   show_autosnippets = true, -- Display autosnippets in the completion menu
-    -- }
 
     opts.keymap = {
       preset = 'enter',
