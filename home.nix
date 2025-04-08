@@ -10,8 +10,6 @@
     bottom
     hyperfine
     pango
-    lua-language-server
-    stylua
   ];
 
   home.sessionVariables = {
@@ -124,6 +122,12 @@
     neovim = {
       viAlias = true;
       enable = true;
+      extraPackages = with pkgs; [
+        lua51Packages.luarocks
+        lua51Packages.lua
+        lua-language-server
+        stylua
+      ];
     };
 
     eza = {
