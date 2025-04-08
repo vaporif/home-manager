@@ -34,7 +34,6 @@ return {
           enabled = true,
           module = 'blink.cmp.sources.lsp',
           -- kind = 'LSP',
-          min_keyword_length = 1,
           -- When linking markdown notes, I would get snippets and text in the
           -- suggestions, I want those to show only if there are no LSP
           -- suggestions
@@ -53,7 +52,6 @@ return {
           -- suggestions, I want those to show only if there are no path
           -- suggestions
           fallbacks = { 'snippets', 'buffer' },
-          -- min_keyword_length = 2,
           opts = {
             trailing_slash = false,
             label_trailing_slash = true,
