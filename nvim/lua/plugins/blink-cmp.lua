@@ -8,7 +8,7 @@ return {
   -- working release
   -- https://github.com/Saghen/blink.cmp/releases
   -- version = "v0.13.1",
-  version = '^1',
+  version = '1.1.1',
   dependencies = {
     'Kaiser-Yang/blink-cmp-dictionary',
   },
@@ -122,6 +122,7 @@ return {
           --   return items
           -- end,
         },
+
         -- https://github.com/Kaiser-Yang/blink-cmp-dictionary
         -- In macOS to get started with a dictionary:
         -- cp /usr/share/dict/words ~/github/dotfiles-latest/dictionaries/words.txt
