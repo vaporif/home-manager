@@ -26,7 +26,7 @@ return {
           name = 'lsp',
           enabled = true,
           module = 'blink.cmp.sources.lsp',
-          min_keyword_length = 2,
+          -- min_keyword_length = 2,
           score_offset = 90, -- the higher the number, the higher the priority
         },
         path = {
