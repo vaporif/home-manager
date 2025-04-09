@@ -26,12 +26,14 @@ return {
           name = 'lsp',
           enabled = true,
           module = 'blink.cmp.sources.lsp',
+          min_keyword_length = 2,
           score_offset = 90, -- the higher the number, the higher the priority
         },
         path = {
           name = 'Path',
           module = 'blink.cmp.sources.path',
           score_offset = 25,
+          min_keyword_length = 3,
           fallbacks = { 'snippets', 'buffer' },
           opts = {
             trailing_slash = false,
@@ -87,7 +89,6 @@ return {
     }
 
     opts.completion = {
-      ghost_text = { enabled = true },
       menu = {
         draw = {
           padding = { 0, 1 }, -- padding only on right side
