@@ -20,7 +20,7 @@ return {
       return true
     end
     opts.sources = vim.tbl_deep_extend('force', opts.sources or {}, {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'dictionary' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         lsp = {
           name = 'lsp',
@@ -67,17 +67,18 @@ return {
           -- Only show snippets if I type the trigger_text characters, so
           -- to expand the "bash" snippet, if the trigger_text is ";" I have to
         },
-        dictionary = {
-          module = 'blink-cmp-dictionary',
-          name = 'Dict',
-          score_offset = 20, -- the higher the number, the higher the priority
-          enabled = true,
-          max_items = 8,
-          min_keyword_length = 3,
-          opts = {
-            dictionary_directories = { vim.fn.expand '~/.local/share/blink-cmp-dict/' },
-          },
-        },
+        -- not sure i like it
+        -- dictionary = {
+        --   module = 'blink-cmp-dictionary',
+        --   name = 'Dict',
+        --   score_offset = 20, -- the higher the number, the higher the priority
+        --   enabled = true,
+        --   max_items = 8,
+        --   min_keyword_length = 3,
+        --   opts = {
+        --     dictionary_directories = { vim.fn.expand '~/.local/share/blink-cmp-dict/' },
+        --   },
+        -- },
       },
     })
 
