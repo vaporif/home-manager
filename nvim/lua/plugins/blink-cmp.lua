@@ -6,19 +6,6 @@ return {
     'Kaiser-Yang/blink-cmp-dictionary',
   },
   opts = function(_, opts)
-    -- I noticed that telescope was extremeley slow and taking too long to open,
-    -- assumed related to blink, so disabled blink and in fact it was related
-    -- :lua print(vim.bo[0].filetype)
-    -- So I'm disabling blink.cmp for Telescope
-    opts.enabled = function()
-      -- Get the current buffer's filetype
-      local filetype = vim.bo[0].filetype
-      -- Disable for Telescope buffers
-      if filetype == 'TelescopePrompt' or filetype == 'minifiles' or filetype == 'snacks_picker_input' then
-        return false
-      end
-      return true
-    end
     opts.sources = vim.tbl_deep_extend('force', opts.sources or {}, {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
@@ -26,7 +13,6 @@ return {
           name = 'lsp',
           enabled = true,
           module = 'blink.cmp.sources.lsp',
-          -- min_keyword_length = 2,
           score_offset = 90, -- the higher the number, the higher the priority
         },
         path = {
@@ -89,6 +75,9 @@ return {
     }
 
     opts.completion = {
+      trigger = {
+        show_on_trigger_character = true,
+      },
       menu = {
         draw = {
           padding = { 0, 1 }, -- padding only on right side
