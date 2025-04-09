@@ -48,7 +48,7 @@ return {
         snippets = {
           name = 'snippets',
           enabled = true,
-          max_items = 15,
+          max_items = 10,
           min_keyword_length = 2,
           module = 'blink.cmp.sources.snippets',
           score_offset = 85, -- the higher the number, the higher the priority
