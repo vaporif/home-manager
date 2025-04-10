@@ -7,7 +7,7 @@ return {
   },
   opts = function(_, opts)
     opts.sources = vim.tbl_deep_extend('force', opts.sources or {}, {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
       providers = {
         lsp = {
           name = 'lsp',
@@ -55,6 +55,7 @@ return {
           -- Only show snippets if I type the trigger_text characters, so
           -- to expand the "bash" snippet, if the trigger_text is ";" I have to
         },
+        lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         -- not sure i like it
         -- dictionary = {
         --   module = 'blink-cmp-dictionary',
@@ -70,9 +71,13 @@ return {
       },
     })
 
+    opts.appearance = { nerd_font_variant = 'mono' }
+
     opts.cmdline = {
       enabled = true,
     }
+
+    opts.signature = { enabled = true }
 
     opts.completion = {
       trigger = {
