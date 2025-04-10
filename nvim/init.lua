@@ -95,7 +95,8 @@ require('lazy').setup({
   require 'plugins.crates',
   require 'plugins.conform',
   require 'plugins.lualine',
-  require 'plugins.rainbow',
+  -- make toggle
+  -- require 'plugins.rainbow',
   'mg979/vim-visual-multi',
   require 'plugins.mini',
   { 'svermeulen/vim-subversive' },
