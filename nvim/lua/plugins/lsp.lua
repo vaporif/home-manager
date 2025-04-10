@@ -100,7 +100,7 @@ return {
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
+    capabilities = vim.tbl_deep_extend('force', {}, capabilities, require('blink.cmp').get_lsp_capabilities())
 
     capabilities = vim.tbl_deep_extend('force', capabilities, {
       textDocument = {
@@ -160,6 +160,8 @@ return {
     require('mason').setup()
 
     require('mason-lspconfig').setup {
+      ensure_installed = {},
+      automatic_installation = false,
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
